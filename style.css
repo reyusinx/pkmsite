@@ -1,0 +1,463 @@
+* {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #1a1008;
+}
+
+/* LAYER BACKGROUND PARALLAX */
+#parallax-bg {
+  position: fixed;
+  inset: -10% 0 0 0;
+  height: 120%;
+  z-index: -1;
+  background-image: url("image/bg.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  will-change: transform;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+  pointer-events: none;
+}
+
+#main-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* LOADING */
+#loading {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #1a1008;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition:
+    opacity 0.8s ease,
+    visibility 0.8s ease;
+}
+#loading.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-top-color: #d97706;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+#loading p {
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* SLIDE UP HERO */
+.hero-img-wrap {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideUp 0.9s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
+  animation-delay: 0.3s;
+  will-change: transform;
+}
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FLOATING ELEMEN (GAMBAR) */
+.float-wrap {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+}
+.float-element {
+  display: block;
+  width: 56px;
+  height: auto;
+  opacity: 0.55;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.35));
+  animation: floatAround 12s ease-in-out infinite alternate;
+}
+.float-wrap:nth-child(1) {
+  top: 8%;
+  left: 6%;
+}
+.float-wrap:nth-child(1) .float-element {
+  animation-duration: 14s;
+  width: 64px;
+}
+.float-wrap:nth-child(2) {
+  top: 18%;
+  right: 8%;
+}
+.float-wrap:nth-child(2) .float-element {
+  animation-duration: 11s;
+  animation-delay: 1s;
+  width: 48px;
+}
+.float-wrap:nth-child(3) {
+  bottom: 28%;
+  left: 5%;
+}
+.float-wrap:nth-child(3) .float-element {
+  animation-duration: 16s;
+  animation-delay: 0.5s;
+  width: 58px;
+}
+.float-wrap:nth-child(4) {
+  bottom: 18%;
+  right: 6%;
+}
+.float-wrap:nth-child(4) .float-element {
+  animation-duration: 13s;
+  animation-delay: 2s;
+  width: 44px;
+}
+.float-wrap:nth-child(5) {
+  top: 45%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.float-wrap:nth-child(5) .float-element {
+  animation-duration: 18s;
+  animation-delay: 0.8s;
+  width: 72px;
+}
+
+@keyframes floatAround {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translate(20px, -25px) scale(1.1) rotate(5deg);
+  }
+  50% {
+    transform: translate(-15px, 30px) scale(0.9) rotate(-3deg);
+  }
+  75% {
+    transform: translate(25px, 15px) scale(1.05) rotate(4deg);
+  }
+  100% {
+    transform: translate(-20px, -20px) scale(0.95) rotate(-5deg);
+  }
+}
+
+/* SCROLL INDICATOR */
+.scroll-indicator {
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+/* TOMBOL LINK */
+.link-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #462c15;
+  background: linear-gradient(to bottom, #a0522d, #d97706, #ffa944, #ffb35a);
+  box-shadow: 0 6px 24px rgba(160, 82, 45, 0.3);
+  border: 2px solid #ffde59;
+  transition: all 0.25s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
+  position: relative;
+  min-height: 60px;
+}
+.link-btn.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.link-btn:active {
+  transform: scale(0.96);
+}
+.link-btn:hover,
+.link-btn:focus-visible {
+  border-color: #fff3c4;
+  box-shadow: 0 8px 28px rgba(160, 82, 45, 0.45);
+}
+
+/* Teks di tengah */
+.link-btn .btn-label {
+  flex: 1;
+  text-align: center;
+  font-family: "Wallpoet", "Inter", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+/* Ikon di kiri (sesuai permintaan) */
+.link-btn .icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+  color: white;
+  background: rgba(0, 0, 0, 0.2);
+  order: 0; /* default di kiri */
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+/* Chevron di kanan (opsional, disembunyikan agar lebih bersih) */
+.link-btn .chevron-right {
+  order: 2;
+  margin-left: auto;
+  color: rgba(70, 44, 21, 0.4);
+  font-size: 0.75rem;
+  display: none; /* disembunyikan, kalau mau muncul hapus display:none */
+}
+
+/* Warna ikon per tombol */
+.btn-instagram1 .icon-wrap {
+  background: #e4405f;
+}
+.btn-instagram2 .icon-wrap {
+  background: #e4405f;
+}
+.btn-handbook .icon-wrap {
+  background: #3b82f6;
+}
+.btn-twibbon .icon-wrap {
+  background: #8b5cf6;
+}
+.btn-contact .icon-wrap {
+  background: #f59e0b;
+}
+.btn-theme .icon-wrap {
+  background: #ec4899;
+}
+.btn-dokumentasi .icon-wrap {
+  background: #14b8a6;
+}
+.btn-kelompok .icon-wrap {
+  background: #f97316;
+}
+.btn-kamar .icon-wrap {
+  background: #6366f1;
+}
+
+/* SECTION LINK */
+#links {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 1.5rem 1.25rem 2.5rem !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+/* HEADER – logo di tengah */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+}
+.header .logo-img {
+  height: 53px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+/* FOOTER */
+footer {
+  background: rgba(20, 12, 6, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.35);
+}
+footer .heart {
+  color: #f59e0b;
+}
+
+/* SOCIAL LOGOS – rapat & naik */
+.social-logos {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem; /* lebih rapat */
+  margin-top: 0.2rem; /* naikkan posisi */
+  margin-bottom: 0.5rem;
+}
+
+.social-logos a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  color: #ffde59;
+  font-size: 1.5rem;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.social-logos a:hover {
+  transform: scale(1.1);
+  opacity: 0.7;
+}
+.social-logos a:active {
+  transform: scale(0.92);
+}
+
+.social-logos a .fa-youtube,
+.social-logos a .fa-instagram,
+.social-logos a .fa-whatsapp {
+  color: inherit !important;
+}
+
+/* HERO SECTION */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.5rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 450px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Gambar hero diperbesar */
+.hero-img-wrap img {
+  width: 100%;
+  max-width: 540px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (min-width: 641px) {
+  .hero-img-wrap img {
+    max-width: 480px; /* lebih besar di desktop */
+  }
+  .social-logos {
+    gap: 1.5rem;
+  }
+  .social-logos a {
+    width: 52px;
+    height: 52px;
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-img-wrap img {
+    max-width: 470px;
+  }
+  .social-logos {
+    gap: 0.1rem;
+  }
+  .social-logos a {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  .link-btn {
+    padding: 0.9rem 1.25rem;
+    font-size: 0.8rem;
+    min-height: 54px;
+  }
+  .link-btn .icon-wrap {
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+  }
+  .float-element {
+    width: 40px !important;
+    opacity: 0.4;
+  }
+}
+
+/* SMOOTH SCROLL */
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .float-element,
+  #parallax-bg,
+  .hero-img-wrap {
+    animation: none !important;
+    transition: none !important;
+  }
+}
