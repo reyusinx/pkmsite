@@ -22,7 +22,17 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="parallax-bg"></div>
+    <div id="parallax-bg">
+      <!-- DEKORASI BACKGROUND (TEMPELAN SUBTLE) -->
+      <div class="bg-deco bg-deco-1"></div>
+      <div class="bg-deco bg-deco-2"></div>
+      <div class="bg-deco bg-deco-3"></div>
+      <div class="bg-deco bg-deco-4"></div>
+      <div class="bg-deco-diamond bg-deco-diamond-1"></div>
+      <div class="bg-deco-diamond bg-deco-diamond-2"></div>
+      <div class="bg-deco-star bg-deco-star-1"><i class="fas fa-star"></i></div>
+      <div class="bg-deco-star bg-deco-star-2"><i class="fas fa-star"></i></div>
+    </div>
 
     <!-- LOADING -->
     <div id="loading">
@@ -32,8 +42,8 @@
 
     <!-- MAIN CONTENT -->
     <div id="main-content">
-      <!-- HEADER (logo di tengah) -->
-      <header class="header top-0 left-0 w-full z-50">
+      <!-- HEADER -->
+      <header class="header">
         <img src="image/logo.png" alt="Logo" class="logo-img" />
       </header>
 
@@ -61,10 +71,9 @@
             <img src="image/herosectiontext.png" alt="Hero Text PKM" />
           </div>
 
-          <!-- Social logos (rapat & naik) -->
           <div class="social-logos">
             <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="#" aria-label="Instagram"
+            <a href="https://www.instagram.com/pkm_imk/" aria-label="Instagram"
               ><i class="fab fa-instagram"></i
             ></a>
             <a href="#" aria-label="WhatsApp"
@@ -73,9 +82,8 @@
           </div>
         </div>
 
-        <!-- Scroll indicator -->
         <div
-          class="absolute bottom-6 -translate-x-1/2 flex flex-col items-center gap-1 text-white/40 text-xs font-medium scroll-indicator"
+          class="absolute bottom-6 -translate-x-1/2 flex flex-col items-center gap-1 text-white/40 text-xs font-medium scroll-indicator z-10"
         >
           <span>Scroll</span>
           <i class="fa-solid fa-chevron-down text-sm"></i>
@@ -83,65 +91,156 @@
       </section>
 
       <!-- LINK SECTION -->
-      <section id="links" class="px-5 pb-8 max-w-lg mx-auto">
+      <section id="links" class="px-5 pb-8 mx-auto">
         <div class="space-y-3.5">
-          <a href="#" class="link-btn btn-instagram1" data-delay="0">
+          <a
+            href="https://www.instagram.com/imakrisum/"
+            class="link-btn"
+            data-delay="0"
+          >
             <span class="btn-label">Instagram Imakris</span>
             <span class="chevron-right"
               ><i class="fa-solid fa-chevron-right"></i
             ></span>
           </a>
-
-          <a href="#" class="link-btn btn-instagram2" data-delay="50">
+          <a
+            href="https://www.instagram.com/pkm_imk/"
+            class="link-btn"
+            data-delay="50"
+          >
             <span class="btn-label">Instagram PKM</span>
             <span class="chevron-right"
               ><i class="fa-solid fa-chevron-right"></i
             ></span>
           </a>
-
-          <a href="#" class="link-btn btn-handbook" data-delay="100">
+          <a href="#" class="link-btn" data-delay="100">
             <span class="btn-label">Handbook PKM</span>
             <span class="chevron-right"
               ><i class="fa-solid fa-chevron-right"></i
             ></span>
           </a>
-
-          <a href="#" class="link-btn btn-twibbon" data-delay="150">
+          <a href="#" class="link-btn" data-delay="150">
             <span class="btn-label">Twibbon</span>
             <span class="chevron-right"
               ><i class="fa-solid fa-chevron-right"></i
             ></span>
           </a>
+          <!-- ===== KONTRIBUSI PEMBAYARAN ===== -->
+          <div class="kontribusi-card" data-delay="180">
+            <div class="judul">KONTRIBUSI MABA</div>
+            <div class="divider"></div>
 
-          <a href="#" class="link-btn btn-contact" data-delay="200">
-            <span class="btn-label">CONTACT PERSON PER-FAKULTAS</span>
+            <!-- QRIS -->
+            <div class="qris-wrap">
+              <img src="image/QRIS.png" alt="QRIS" />
+            </div>
+
+            <!-- Biaya & Timeline -->
+            <div class="info-row">
+              <span class="icon">💸</span>
+              <span
+                ><span class="label">Biaya Kontribusi:</span>
+                <strong>Rp 200.000</strong></span
+              >
+            </div>
+            <div class="info-row">
+              <span class="icon">⏲️</span>
+              <span
+                ><span class="label">Timeline pembayaran:</span> 31 Agustus - 19
+                September 2025</span
+              >
+            </div>
+
+            <!-- Media Pembayaran -->
+            <div class="sub-section">
+              <div class="sub-title">Media pembayaran</div>
+
+              <div
+                style="
+                  font-weight: 600;
+                  color: #ffde59;
+                  font-size: 0.8rem;
+                  margin-top: 0.2rem;
+                "
+              >
+                1. Online
+              </div>
+              <div class="list-item">QRIS (scan di atas)</div>
+              <div class="list-item">
+                No Rek BNI <strong>1861558945</strong> a.n Stevanny Tampubolon
+              </div>
+
+              <div class="badge-warning">
+                <strong>Nb:</strong><br />
+                1. Memberi kode <strong>01</strong> di akhir nominal pembayaran
+                (contoh, Rp 200.001).<br />
+                2. WAJIB konfirmasi pembayaran online ke no
+                <strong>082113092017</strong> (Stevanny) dengan format kirim ss
+                bukti pembayaran dengan keterangan
+                <strong>(NAMA LENGKAP_FAKULTAS_PRODI)</strong>.
+              </div>
+
+              <div
+                style="
+                  font-weight: 600;
+                  color: #ffde59;
+                  font-size: 0.8rem;
+                  margin-top: 0.6rem;
+                "
+              >
+                2. Offline
+              </div>
+              <div class="list-item">
+                📍 Tempat: Gedung UKM UM "Sekretariat UKM IMAKRIS" (E17.219,
+                lantai 2, Jl. Ambarawa Dalam)
+              </div>
+              <div class="list-item">📅 Hari: Senin - Jum'at</div>
+              <div class="list-item">⏲️ Jam: 16.00-19.00 WIB</div>
+            </div>
+
+            <!-- Sistem Pembayaran -->
+            <div class="sub-section">
+              <div class="sub-title">Sistem pembayaran</div>
+              <div class="list-item">1. Cash</div>
+              <div class="list-item">2. Mencicil (pada setiap termin)</div>
+              <div class="termin-list">
+                <span class="termin-item"
+                  >Termin ke-1: 8-14 September 2025</span
+                >
+                <span class="termin-item"
+                  >Termin ke-2: 15-21 September 2025</span
+                >
+                <span class="termin-item"
+                  >Termin ke-3: 22-24 September 2025</span
+                >
+              </div>
+            </div>
+          </div>
+          <a href="#" class="link-btn" data-delay="200">
+            <span class="btn-label">CP FAKULTAS</span>
             <span class="chevron-right"
               ><i class="fa-solid fa-chevron-right"></i
             ></span>
           </a>
-
-          <a href="#" class="link-btn btn-theme" data-delay="250">
+          <a href="#" class="link-btn" data-delay="250">
             <span class="btn-label">THEME SONG</span>
             <span class="chevron-right"
               ><i class="fa-solid fa-chevron-right"></i
             ></span>
           </a>
-
-          <a href="#" class="link-btn btn-dokumentasi" data-delay="300">
+          <a href="#" class="link-btn" data-delay="300">
             <span class="btn-label">DOKUMENTASI PKM</span>
             <span class="chevron-right"
               ><i class="fa-solid fa-chevron-right"></i
             ></span>
           </a>
-
-          <a href="#" class="link-btn btn-kelompok" data-delay="350">
+          <a href="#" class="link-btn" data-delay="350">
             <span class="btn-label">Pembagian kelompok</span>
             <span class="chevron-right"
               ><i class="fa-solid fa-chevron-right"></i
             ></span>
           </a>
-
-          <a href="#" class="link-btn btn-kamar" data-delay="400">
+          <a href="#" class="link-btn" data-delay="400">
             <span class="btn-label">Pembagian kamar</span>
             <span class="chevron-right"
               ><i class="fa-solid fa-chevron-right"></i
@@ -152,9 +251,9 @@
 
       <!-- FOOTER -->
       <footer class="py-5 text-center text-xs">
-        <p>&copy; 2026 Panitia PKM · All rights reserved.</p>
+        <p>&copy; 2026 Imakris UM · All rights reserved.</p>
         <p class="mt-1 text-[11px] text-white/25">
-          Made with <i class="fa-solid fa-heart heart"></i> &amp; Tailwind
+          Made with <i class="fa-solid fa-heart heart"></i> &amp; Risol mayo
         </p>
       </footer>
     </div>
@@ -163,14 +262,12 @@
       (function () {
         "use strict";
 
-        // LOADING
         const loading = document.getElementById("loading");
         setTimeout(() => {
           loading.classList.add("hide");
           setTimeout(initScrollReveal, 400);
         }, 2000);
 
-        // SCROLL REVEAL
         function initScrollReveal() {
           const btns = document.querySelectorAll(".link-btn");
           const observer = new IntersectionObserver(
@@ -191,7 +288,6 @@
           btns.forEach((btn) => observer.observe(btn));
         }
 
-        // FALLBACK
         setTimeout(() => {
           document
             .querySelectorAll(".link-btn:not(.visible)")
@@ -200,7 +296,6 @@
             });
         }, 4000);
 
-        // PARALLAX
         const prefersReducedMotion = window.matchMedia(
           "(prefers-reduced-motion: reduce)",
         ).matches;

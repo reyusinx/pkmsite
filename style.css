@@ -18,8 +18,8 @@ body {
 /* LAYER BACKGROUND PARALLAX */
 #parallax-bg {
   position: fixed;
-  inset: -10% 0 0 0;
-  height: 120%;
+  inset: -40% 0 0 0;
+  height: 150%;
   z-index: -1;
   background-image: url("image/bg.png");
   background-size: cover;
@@ -203,22 +203,22 @@ body::before {
 .link-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.75rem;
-  padding: 1rem 1.5rem;
+  padding: 0.9rem 1.25rem;
   border-radius: 15px;
   text-decoration: none;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #462c15;
   background: linear-gradient(to bottom, #a0522d, #d97706, #ffa944, #ffb35a);
   box-shadow: 0 6px 24px rgba(160, 82, 45, 0.3);
   border: 2px solid #ffde59;
-  transition: all 0.25s ease;
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
-  position: relative;
-  min-height: 60px;
+  min-height: 56px;
+  width: 100%;
 }
 .link-btn.visible {
   opacity: 1;
@@ -240,74 +240,25 @@ body::before {
   font-family: "Wallpoet", "Inter", sans-serif;
   font-weight: 400;
   letter-spacing: 0.5px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
-/* Ikon di kiri (sesuai permintaan) */
-.link-btn .icon-wrap {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  flex-shrink: 0;
-  color: white;
-  background: rgba(0, 0, 0, 0.2);
-  order: 0; /* default di kiri */
-  margin-left: 0;
-  margin-right: 0.5rem;
-}
-
-/* Chevron di kanan (opsional, disembunyikan agar lebih bersih) */
+/* Chevron di kanan (disembunyikan) */
 .link-btn .chevron-right {
-  order: 2;
-  margin-left: auto;
-  color: rgba(70, 44, 21, 0.4);
-  font-size: 0.75rem;
-  display: none; /* disembunyikan, kalau mau muncul hapus display:none */
+  display: none;
 }
 
-/* Warna ikon per tombol */
-.btn-instagram1 .icon-wrap {
-  background: #e4405f;
-}
-.btn-instagram2 .icon-wrap {
-  background: #e4405f;
-}
-.btn-handbook .icon-wrap {
-  background: #3b82f6;
-}
-.btn-twibbon .icon-wrap {
-  background: #8b5cf6;
-}
-.btn-contact .icon-wrap {
-  background: #f59e0b;
-}
-.btn-theme .icon-wrap {
-  background: #ec4899;
-}
-.btn-dokumentasi .icon-wrap {
-  background: #14b8a6;
-}
-.btn-kelompok .icon-wrap {
-  background: #f97316;
-}
-.btn-kamar .icon-wrap {
-  background: #6366f1;
-}
-
-/* SECTION LINK */
+/* SECTION LINK – container lebih sempit agar tombol pendek */
 #links {
   background: transparent !important;
   backdrop-filter: none !important;
   box-shadow: none !important;
   border-radius: 0 !important;
   padding: 1.5rem 1.25rem 2.5rem !important;
-  max-width: 100% !important;
-  margin: 0 !important;
+  max-width: 500px !important; /* lebih sempit dari sebelumnya (max-w-sm = 384px, ini 400px) */
+  margin: 0 auto !important;
 }
 
 /* HEADER – logo di tengah */
@@ -339,8 +290,8 @@ footer .heart {
 .social-logos {
   display: flex;
   justify-content: center;
-  gap: 1.2rem; /* lebih rapat */
-  margin-top: 0.2rem; /* naikkan posisi */
+  gap: -2rem;
+  margin-top: 0.8rem; /* naikkan posisi */
   margin-bottom: 0.5rem;
 }
 
@@ -443,6 +394,202 @@ footer .heart {
   .float-element {
     width: 40px !important;
     opacity: 0.4;
+  }
+}
+
+/* ============================================
+   KONTRIBUSI PEMBAYARAN
+   ============================================ */
+
+.kontribusi-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255, 222, 89, 0.2);
+  border-radius: 20px;
+  padding: 1.5rem 1.25rem;
+  color: #f5e6d3;
+  margin: 0.5rem 0;
+  transition: all 0.3s ease;
+}
+
+.kontribusi-card:hover {
+  border-color: rgba(255, 222, 89, 0.5);
+  box-shadow: 0 8px 30px rgba(160, 82, 45, 0.15);
+}
+
+/* ---- Judul ---- */
+.kontribusi-card .judul {
+  font-family: "Wallpoet", "Inter", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  color: #ffde59;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+/* ---- Garis dekoratif ---- */
+.kontribusi-card .divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #ffde59, transparent);
+  margin: 0.25rem auto 1rem;
+}
+
+/* ---- QRIS ---- */
+.kontribusi-card .qris-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0 1rem;
+}
+
+.kontribusi-card .qris-wrap img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #ffffff;
+  padding: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ---- Baris informasi (biaya, timeline) ---- */
+.kontribusi-card .info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #e8d5c0;
+}
+
+.kontribusi-card .info-row .icon {
+  color: #ffde59;
+  width: 1.2rem;
+  flex-shrink: 0;
+  text-align: center;
+  margin-top: 0.1rem;
+}
+
+.kontribusi-card .info-row .label {
+  font-weight: 600;
+  color: #ffde59;
+}
+
+.kontribusi-card .info-row .value {
+  color: #f0e0d0;
+}
+
+.kontribusi-card .info-row .value strong {
+  color: #ffb35a;
+}
+
+/* ---- Sub-section (Online, Offline, Sistem) ---- */
+.kontribusi-card .sub-section {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 222, 89, 0.1);
+}
+
+.kontribusi-card .sub-section .sub-title {
+  font-weight: 700;
+  color: #ffde59;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.4rem;
+}
+
+/* ---- List item dengan bullet emas ---- */
+.kontribusi-card .list-item {
+  font-size: 0.8rem;
+  color: #d4c0b0;
+  padding-left: 1.2rem;
+  position: relative;
+  margin-bottom: 0.2rem;
+  line-height: 1.6;
+}
+
+.kontribusi-card .list-item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #ffde59;
+}
+
+.kontribusi-card .list-item strong {
+  color: #ffb35a;
+}
+
+/* ---- Badge catatan penting ---- */
+.kontribusi-card .badge-warning {
+  background: rgba(255, 222, 89, 0.1);
+  border-left: 3px solid #ffde59;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: #e8d5c0;
+  margin-top: 0.5rem;
+  line-height: 1.6;
+}
+
+.kontribusi-card .badge-warning strong {
+  color: #ffde59;
+}
+
+/* ---- Daftar termin (tag) ---- */
+.kontribusi-card .termin-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.8rem;
+  margin-top: 0.3rem;
+}
+
+.kontribusi-card .termin-list .termin-item {
+  font-size: 0.75rem;
+  color: #d4c0b0;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.15rem 0.6rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 222, 89, 0.1);
+}
+
+/* ============================================
+   RESPONSIVE UNTUK KONTRIBUSI
+   ============================================ */
+
+@media (max-width: 640px) {
+  .kontribusi-card {
+    padding: 1rem 0.9rem;
+  }
+  .kontribusi-card .qris-wrap img {
+    width: 80%;
+    height: 80%;
+  }
+  .kontribusi-card .info-row {
+    font-size: 0.75rem;
+  }
+  .kontribusi-card .list-item {
+    font-size: 0.7rem;
+  }
+  .kontribusi-card .badge-warning {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+  .kontribusi-card .termin-list .termin-item {
+    font-size: 0.65rem;
+  }
+}
+
+@media (min-width: 641px) {
+  .kontribusi-card {
+    padding: 1.75rem 1.75rem;
+  }
+  .kontribusi-card .qris-wrap img {
+    width: 80%;
+    height: 80%;
   }
 }
 
