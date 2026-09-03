@@ -34,10 +34,29 @@
       <div class="bg-deco-star bg-deco-star-2"><i class="fas fa-star"></i></div>
     </div>
 
-    <!-- LOADING -->
+    <!-- ===== LOADING SCREEN HTML ===== -->
     <div id="loading">
-      <div class="loader"></div>
-      <p>MEMPERSIAPKAN</p>
+      <div class="loading-frame">
+        <!-- Ikon retro: kamera / film / bintang -->
+        <div class="loading-icon">◈ ✦ ◈</div>
+
+        <!-- Judul -->
+        <div class="loading-title">
+          P<span>K</span>M <span>2</span>0<span>2</span>6
+        </div>
+        <div class="loading-sub">— loading —</div>
+
+        <!-- Loading bar -->
+        <div class="loading-bar-track">
+          <div class="loading-bar-fill"></div>
+        </div>
+
+        <!-- Persentase (diupdate oleh JS) -->
+        <div class="loading-percent" id="loadPercent">00%</div>
+
+        <!-- Quote retro -->
+        <div class="loading-quote">✧ preparing the frame ✧</div>
+      </div>
     </div>
 
     <!-- MAIN CONTENT -->
@@ -54,13 +73,13 @@
           <img src="image/Element-1.png" alt="" class="float-element" />
         </div>
         <div class="float-wrap" data-speed="0.2">
-          <img src="image/Element-1.png" alt="" class="float-element" />
+          <img src="image/Element-3.png" alt="" class="float-element" />
         </div>
         <div class="float-wrap" data-speed="0.15">
-          <img src="image/Element-1.png" alt="" class="float-element" />
+          <img src="image/Element-3.png" alt="" class="float-element" />
         </div>
         <div class="float-wrap" data-speed="0.25">
-          <img src="image/Element-1.png" alt="" class="float-element" />
+          <img src="image/Element-2.png" alt="" class="float-element" />
         </div>
         <div class="float-wrap" data-speed="0.1">
           <img src="image/Element-1.png" alt="" class="float-element" />
@@ -263,10 +282,38 @@
         "use strict";
 
         const loading = document.getElementById("loading");
+        const percentEl = document.getElementById("loadPercent");
+
+        // Simulasi progress 0–100%
+        let progress = 0;
+        const interval = setInterval(() => {
+          progress += Math.random() * 4 + 0.5;
+          if (progress >= 100) {
+            progress = 100;
+            clearInterval(interval);
+            // Sembunyikan loading setelah 100%
+            setTimeout(() => {
+              loading.classList.add("hide");
+              // Panggil initScrollReveal jika ada
+              if (typeof initScrollReveal === "function") {
+                setTimeout(initScrollReveal, 400);
+              }
+            }, 400);
+          }
+          percentEl.textContent = Math.floor(progress) + "%";
+        }, 60);
+
+        // Fallback: maksimal 4 detik
         setTimeout(() => {
-          loading.classList.add("hide");
-          setTimeout(initScrollReveal, 400);
-        }, 2000);
+          clearInterval(interval);
+          percentEl.textContent = "100%";
+          setTimeout(() => {
+            loading.classList.add("hide");
+            if (typeof initScrollReveal === "function") {
+              setTimeout(initScrollReveal, 400);
+            }
+          }, 400);
+        }, 4000);
 
         function initScrollReveal() {
           const btns = document.querySelectorAll(".link-btn");

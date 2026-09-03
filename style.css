@@ -42,12 +42,12 @@ body::before {
   z-index: 1;
 }
 
-/* LOADING */
+/* ---- LOADING WRAPPER ---- */
 #loading {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: #1a1008;
+  background: #1e140e;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,39 +55,186 @@ body::before {
   transition:
     opacity 0.8s ease,
     visibility 0.8s ease;
+  font-family: "Courier New", monospace;
 }
+
 #loading.hide {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
-.loader {
-  width: 48px;
-  height: 48px;
-  border: 4px solid rgba(255, 255, 255, 0.1);
-  border-top-color: #d97706;
-  border-radius: 50%;
-  animation: spin 0.9s linear infinite;
+
+/* ---- TEKSTUR GRAIN (subtle) ---- */
+#loading::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 128px 128px;
+  pointer-events: none;
 }
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
+
+/* ---- BORDER DEKORATIF VINTAGE ---- */
+.loading-frame {
+  position: relative;
+  z-index: 1;
+  padding: 2rem 2.5rem 2.5rem;
+  border: 2px solid rgba(255, 222, 89, 0.15);
+  border-radius: 4px;
+  text-align: center;
+  max-width: 340px;
+  width: 100%;
+}
+
+.loading-frame::before,
+.loading-frame::after {
+  content: "✦";
+  position: absolute;
+  color: rgba(255, 222, 89, 0.2);
+  font-size: 0.6rem;
+}
+.loading-frame::before {
+  top: -0.6rem;
+  left: -0.6rem;
+}
+.loading-frame::after {
+  bottom: -0.6rem;
+  right: -0.6rem;
+}
+
+/* ---- LOGO / IKON RETRO ---- */
+.loading-icon {
+  font-size: 2.4rem;
+  color: #d4a373;
+  letter-spacing: 4px;
+  margin-bottom: 0.25rem;
+  opacity: 0.8;
+  animation: flicker 3s infinite alternate;
+}
+
+@keyframes flicker {
+  0%,
+  95% {
+    opacity: 0.8;
+  }
+  96% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.9;
   }
 }
-#loading p {
-  color: rgba(255, 255, 255, 0.4);
-  margin-top: 1.5rem;
-  font-size: 0.9rem;
-  letter-spacing: 2px;
-  animation: pulse 2s infinite;
+
+/* ---- TEKS JUDUL ---- */
+.loading-title {
+  font-family: "Courier New", "Inter", monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #f5e6d3;
+  margin-bottom: 0.1rem;
 }
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 0.4;
+.loading-title span {
+  color: #d4a373;
+}
+
+.loading-sub {
+  font-family: "Courier New", monospace;
+  font-size: 0.55rem;
+  letter-spacing: 8px;
+  color: rgba(255, 222, 89, 0.25);
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+/* ---- LOADING BAR VINTAGE (striped) ---- */
+.loading-bar-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 222, 89, 0.08);
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 222, 89, 0.1);
+}
+
+.loading-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: repeating-linear-gradient(
+    45deg,
+    #d4a373,
+    #d4a373 8px,
+    #ffde59 8px,
+    #ffde59 16px
+  );
+  border-radius: 0;
+  animation: loadProgress 2.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  box-shadow: 0 0 20px rgba(212, 163, 115, 0.15);
+}
+
+@keyframes loadProgress {
+  0% {
+    width: 0%;
+  }
+  20% {
+    width: 18%;
   }
   50% {
-    opacity: 1;
+    width: 52%;
+  }
+  75% {
+    width: 78%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* ---- PERSENTASE (gaya retro) ---- */
+.loading-percent {
+  font-family: "Courier New", monospace;
+  font-size: 0.7rem;
+  color: rgba(255, 222, 89, 0.3);
+  letter-spacing: 2px;
+  margin-top: 0.5rem;
+  transition: opacity 0.2s;
+}
+
+/* ---- TIPS / QUOTE RETRO (opsional) ---- */
+.loading-quote {
+  font-family: "Courier New", monospace;
+  font-size: 0.55rem;
+  color: rgba(255, 222, 89, 0.12);
+  letter-spacing: 1px;
+  margin-top: 1rem;
+  font-style: italic;
+  border-top: 1px solid rgba(255, 222, 89, 0.04);
+  padding-top: 0.6rem;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 480px) {
+  .loading-frame {
+    padding: 1.5rem 1.5rem 2rem;
+  }
+  .loading-icon {
+    font-size: 1.8rem;
+  }
+  .loading-title {
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+  }
+  .loading-sub {
+    font-size: 0.45rem;
+    letter-spacing: 5px;
+  }
+  .loading-bar-track {
+    height: 5px;
   }
 }
 
@@ -353,6 +500,70 @@ footer .heart {
   height: auto;
   display: block;
   margin: 0 auto;
+  animation: breathe 4.5s ease-in-out infinite;
+  will-change: transform, filter;
+  transition: filter 0.3s ease;
+}
+
+@keyframes breathe {
+  0% {
+    transform: translateY(0px) scale(1);
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.25)) brightness(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.015);
+    filter: drop-shadow(0 20px 45px rgba(212, 163, 115, 0.08)) brightness(1.01);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.25)) brightness(1);
+  }
+}
+
+.hero-img-wrap {
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.25));
+}
+
+.hero-img-wrap::after {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(212, 163, 115, 0.04),
+    transparent 70%
+  );
+  opacity: 0;
+  animation: glowPulse 4.5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Wrapper harus relative agar ::after bekerja */
+.hero-img-wrap {
+  position: relative;
+}
+
+/* Floating elements juga dibuat lebih pelan dan organik */
+.float-element {
+  animation: floatBreathe 8s ease-in-out infinite alternate;
+}
+
+@keyframes floatBreathe {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(8px, -12px) scale(1.04) rotate(3deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-6px, 8px) scale(0.96) rotate(-2deg);
+    opacity: 0.4;
+  }
 }
 
 @media (min-width: 641px) {
