@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"
+    />
+    <title>CP Fakultas · PKM Imakris 2026</title>
+    <!-- Tailwind + Font Awesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&family=Wallpoet&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="image/Favicon PKM.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <!-- PARALLAX BG -->
+    <div id="parallax-bg"></div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main-content">
+      <!-- HEADER -->
+      <header class="header">
+        <a href="index.html">
+          <img src="image/logo.png" alt="Logo" class="logo-img" />
+        </a>
+      </header>
+
+      <!-- HERO -->
+      <section class="hero-cp">
+        <div class="hero-cp-content">
+          <h1 class="hero-cp-title">CP Fakultas</h1>
+          <p class="hero-cp-sub">Contact Person per Fakultas PKM 2026</p>
+          <a href="/" class="back-home">
+            <i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda
+          </a>
+        </div>
+      </section>
+
+      <!-- DAFTAR CP -->
+      <section id="cp-list" class="cp-list-section">
+        <div class="cp-grid">
+          <!-- Data CP dimasukkan via JavaScript -->
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="py-5 text-center text-xs">
+        <p>&copy; 2026 Imakris UM · All rights reserved.</p>
+        <p class="mt-1 text-[11px] text-white/25">
+          Made with <i class="fa-solid fa-heart heart"></i> &amp; Risol mayo
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      // ---- LOADING ----
+      const loading = document.getElementById("loading");
+      const percentEl = document.getElementById("loadPercent");
+      let progress = 0;
+      const interval = setInterval(() => {
+        progress += Math.random() * 4 + 0.5;
+        if (progress >= 100) {
+          progress = 100;
+          clearInterval(interval);
+          setTimeout(() => {
+            loading.classList.add("hide");
+          }, 400);
+        }
+        percentEl.textContent = Math.floor(progress) + "%";
+      }, 60);
+      setTimeout(() => {
+        clearInterval(interval);
+        percentEl.textContent = "100%";
+        setTimeout(() => {
+          loading.classList.add("hide");
+        }, 400);
+      }, 4000);
+
+      // ---- DATA CP FAKULTAS ----
+      const cpData = [
+        {
+          fakultas: "Fakultas Psikologi",
+          nama: "Indy",
+          nomor: "0858-2191-8741",
+          wa: "6285821918741",
+        },
+        {
+          fakultas: "Fakultas Kedokteran",
+          nama: "Virgin",
+          nomor: "0822-3220-7742",
+          wa: "6282232207742",
+        },
+        {
+          fakultas: "Fakultas Ilmu Sosial",
+          nama: "Michel",
+          nomor: "0822-2896-7570",
+          wa: "6282228967570",
+        },
+        {
+          fakultas: "Fakultas Ekonomi dan Bisnis",
+          nama: "Bella",
+          nomor: "0852-4518-0845",
+          wa: "6285245180845",
+        },
+        {
+          fakultas: "Fakultas Ilmu Pendidikan",
+          nama: "Ira",
+          nomor: "0853-5849-2252",
+          wa: "6285358492252",
+        },
+        {
+          fakultas: "Fakultas Ilmu Keolahragaan",
+          nama: "Rahel",
+          nomor: "0852-9691-5617",
+          wa: "6285296915617",
+        },
+        {
+          fakultas: "Fakultas Teknik",
+          nama: "Calvin",
+          nomor: "0818-0880-2244",
+          wa: "6281808802244",
+        },
+        {
+          fakultas: "Fakultas Sastra",
+          nama: "Apvia",
+          nomor: "0857-8405-4652",
+          wa: "6285784054652",
+        },
+        {
+          fakultas: "Fakultas MIPA",
+          nama: "Fila",
+          nomor: "0853-9935-3415",
+          wa: "6285399353415",
+        },
+        {
+          fakultas: "Fakultas Vokasi",
+          nama: "Arni",
+          nomor: "0857-4694-5696",
+          wa: "6285746945696",
+        },
+      ];
+
+      // ---- RENDER CP ----
+      const grid = document.querySelector(".cp-grid");
+
+      cpData.forEach((item, index) => {
+        const card = document.createElement("div");
+        card.className = "cp-card";
+        card.style.animationDelay = index * 0.06 + "s";
+
+        // Nomor urut (dimulai dari 1)
+        const nomorUrut = index + 1;
+
+        card.innerHTML = `
+          <div class="cp-card-icon cp-card-number">
+            ${nomorUrut}
+          </div>
+          <div class="cp-card-body">
+            <div class="cp-card-fakultas">${item.fakultas}</div>
+            <div class="cp-card-cp">
+              <span class="cp-label">CP</span>
+              <span class="cp-nama">${item.nama}</span>
+            </div>
+            <div class="cp-card-nomor">${item.nomor}</div>
+            <a
+              href="https://wa.me/${item.wa}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="cp-wa-btn"
+            >
+              <i class="fab fa-whatsapp"></i> Hubungi via WhatsApp
+            </a>
+          </div>
+        `;
+
+        grid.appendChild(card);
+      });
+    </script>
+  </body>
+</html>

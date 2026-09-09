@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"
+    />
+    <title>Kelompok Maba · PKM Imakris 2026</title>
+    <!-- Tailwind + Font Awesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&family=Wallpoet&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="image/Favicon PKM.png"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body>
+    <!-- ===== PARALLAX BG ===== -->
+    <div id="parallax-bg"></div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <div id="main-content">
+      <!-- HEADER -->
+      <header class="header">
+        <a href="/">
+          <img src="image/logo.png" alt="Logo" class="logo-img" />
+        </a>
+      </header>
+
+      <!-- HERO SEARCH -->
+      <section class="hero-search">
+        <div class="hero-title">Cari Kelompok</div>
+        <div class="hero-sub">Maba · Kelompok · Fakultas</div>
+
+        <div class="search-wrap" id="searchWrap">
+          <span class="search-icon"
+            ><i class="fa-solid fa-magnifying-glass"></i
+          ></span>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Nama, kelompok, atau fakultas…"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <button class="search-btn" id="searchBtn">Cari</button>
+        </div>
+
+        <a href="/" class="back-home">
+          <i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda
+        </a>
+      </section>
+
+      <!-- RESULTS -->
+      <section id="results">
+        <div class="result-stats" id="resultStats"></div>
+        <div id="resultContainer"></div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="py-5 text-center text-xs">
+        <p>&copy; 2026 Imakris UM · All rights reserved.</p>
+        <p class="mt-1 text-[11px] text-white/25">
+          Made with <i class="fa-solid fa-heart heart"></i> &amp; Risol mayo
+        </p>
+      </footer>
+    </div>
+
+    <!-- ===== IMPORT MAP ===== -->
+    <script type="importmap">
+      {
+        "imports": {
+          "./data_kelompok.js": "./data_kelompok.js"
+        }
+      }
+    </script>
+
+    <!-- ===== MAIN SCRIPT ===== -->
+    <script type="module">
+      // ---- IMPOR DATA ----
+      import kelompokMaba from "./data_kelompok.js";
+
+      // ---- DOM REFS ----
+      const loading = document.getElementById("loading");
+      const loadPercent = document.getElementById("loadPercent");
+      const searchInput = document.getElementById("searchInput");
+      const searchBtn = document.getElementById("searchBtn");
+      const resultContainer = document.getElementById("resultContainer");
+      const resultStats = document.getElementById("resultStats");
+
+      // ---- LOADING SIMULASI ----
+      let progress = 0;
+      const interval = setInterval(() => {
+        progress += Math.random() * 4 + 0.5;
+        if (progress >= 100) {
+          progress = 100;
+          clearInterval(interval);
+          setTimeout(() => {
+            loading.classList.add("hide");
+          }, 350);
+        }
+        loadPercent.textContent = Math.floor(progress) + "%";
+      }, 60);
+      setTimeout(() => {
+        clearInterval(interval);
+        loadPercent.textContent = "100%";
+        setTimeout(() => {
+          loading.classList.add("hide");
+        }, 350);
+      }, 4000);
+
+      // ---- NORMALISASI ----
+      const normalize = (s) => s?.trim().toLowerCase() || "";
+
+      // ---- FUNGSI SEARCH ----
+      function performSearch(queryRaw) {
+        const q = normalize(queryRaw);
+        if (!q) {
+          resultContainer.innerHTML = `
+                    <div class="no-results">
+                      <div class="big-icon"><i class="fa-regular fa-keyboard"></i></div>
+                      <div>Ketik nama, kelompok, atau fakultas</div>
+                      <div class="hint">misal: &quot;Kristal&quot; atau &quot;FIS&quot;</div>
+                    </div>
+                  `;
+          resultStats.textContent = "";
+          return;
+        }
+
+        // ---- Kumpulkan semua match ----
+        const nameMatches = [];
+        const groupMatches = [];
+        const facultyMatches = [];
+
+        // Data yang sudah di-process untuk menghindari duplikat di group/faculty
+        const seenGroup = new Set();
+        const seenFaculty = new Set();
+
+        for (const m of kelompokMaba) {
+          const nama = normalize(m.nama);
+          const fakultas = normalize(m.fakultas);
+          const kelompok = normalize(m.namaKelompok);
+
+          // Cek match nama (partial, case-insensitive)
+          if (nama.includes(q)) {
+            nameMatches.push(m);
+          }
+
+          // Cek match kelompok (full or partial)
+          if (kelompok.includes(q) && !seenGroup.has(kelompok)) {
+            seenGroup.add(kelompok);
+            // ambil semua anggota kelompok ini
+            const anggota = kelompokMaba.filter(
+              (x) => normalize(x.namaKelompok) === kelompok,
+            );
+            groupMatches.push({
+              namaKelompok: m.namaKelompok,
+              anggota,
+            });
+          }
+
+          // Cek match fakultas (full or partial)
+          if (fakultas.includes(q) && !seenFaculty.has(fakultas)) {
+            seenFaculty.add(fakultas);
+            const anggota = kelompokMaba.filter(
+              (x) => normalize(x.fakultas) === fakultas,
+            );
+            facultyMatches.push({
+              fakultas: m.fakultas,
+              anggota,
+            });
+          }
+        }
+
+        // ---- Prioritas: name > group > faculty ----
+        // Tapi kita tampilkan semuanya dengan label
+        const total =
+          nameMatches.length + groupMatches.length + facultyMatches.length;
+
+        if (total === 0) {
+          resultContainer.innerHTML = `
+                    <div class="no-results">
+                      <div class="big-icon"><i class="fa-regular fa-face-frown"></i></div>
+                      <div>Tidak ditemukan untuk &quot;${queryRaw}&quot;</div>
+                      <div class="hint">Coba gunakan kata kunci lain</div>
+                    </div>
+                  `;
+          resultStats.textContent = "0 hasil";
+          return;
+        }
+
+        // ---- Buat HTML hasil ----
+        let html = "";
+        let count = 0;
+
+        // 1. Name matches (individual)
+        if (nameMatches.length > 0) {
+          // Urutkan berdasarkan nama
+          nameMatches.sort((a, b) => a.nama.localeCompare(b.nama));
+          for (const m of nameMatches) {
+            count++;
+            html += buildStudentCard(m, count);
+          }
+        }
+
+        // 2. Group matches
+        if (groupMatches.length > 0) {
+          for (const g of groupMatches) {
+            count++;
+            html += buildGroupCard(g, count);
+          }
+        }
+
+        // 3. Faculty matches
+        if (facultyMatches.length > 0) {
+          for (const f of facultyMatches) {
+            count++;
+            html += buildFacultyCard(f, count);
+          }
+        }
+
+        resultContainer.innerHTML = html;
+        resultStats.textContent =
+          `${count} hasil untuk &quot;${queryRaw}&quot;` +
+          (nameMatches.length > 0 ? ` · ${nameMatches.length} maba` : "") +
+          (groupMatches.length > 0
+            ? ` · ${groupMatches.length} kelompok`
+            : "") +
+          (facultyMatches.length > 0
+            ? ` · ${facultyMatches.length} fakultas`
+            : "");
+      }
+
+      // ---- BUILD: Student Card ----
+      function buildStudentCard(m, idx) {
+        const kakakKel = m.kakakKelompok || "—";
+        const kakakPI = m.kakakPI || "—";
+        const fak = m.fakultas || "—";
+        return `
+                <div class="result-card" style="animation-delay:${(idx - 1) * 0.04}s">
+                  <div class="card-badge"><i class="fa-regular fa-user"></i> Maba</div>
+                  <div class="row"><span class="label">Nama</span><span class="value"><strong>${m.nama}</strong></span></div>
+                  <div class="row"><span class="label">Fakultas</span><span class="value">${fak}</span></div>
+                  <div class="row"><span class="label">No. Kelompok</span><span class="value">${m.noKel || "—"}</span></div>
+                  <div class="row"><span class="label">Nama Kelompok</span><span class="value">${m.namaKelompok || "—"}</span></div>
+                  <div class="row"><span class="label">Kakak Kelompok</span><span class="value">${kakakKel}</span></div>
+                  <div class="row"><span class="label">Kakak PI</span><span class="value">${kakakPI}</span></div>
+                </div>
+              `;
+      }
+
+      // ---- BUILD: Group Card (dengan kakak kelompok & kakak PI) ----
+      function buildGroupCard(g, idx) {
+        const anggota = g.anggota || [];
+        // ambil data pertama untuk informasi kakak (seharusnya sama per kelompok)
+        const first = anggota[0] || {};
+        const kakakKel = first.kakakKelompok || "—";
+        const kakakPI = first.kakakPI || "—";
+
+        // urutkan anggota berdasarkan nama
+        anggota.sort((a, b) => a.nama.localeCompare(b.nama));
+
+        let membersHtml = "";
+        for (const m of anggota) {
+          const fak = m.fakultas || "—";
+          membersHtml += `
+                    <div class="member-item">
+                      <span class="m-name">${m.nama}</span>
+                      <span class="m-detail">${fak} <span class="m-fac">· Kel ${m.noKel || "—"}</span></span>
+                    </div>
+                  `;
+        }
+
+        return `
+                <div class="result-card" style="animation-delay:${(idx - 1) * 0.04}s">
+                  <div class="card-badge"><i class="fa-regular fa-users"></i> Kelompok</div>
+                  <div class="row"><span class="label">Nama Kelompok</span><span class="value"><strong>${g.namaKelompok}</strong></span></div>
+                  <div class="row"><span class="label">Kakak Kelompok</span><span class="value">${kakakKel}</span></div>
+                  <div class="row"><span class="label">Kakak PI</span><span class="value">${kakakPI}</span></div>
+                  <div class="row"><span class="label">Jumlah Anggota</span><span class="value">${anggota.length} orang</span></div>
+                  <div class="member-list">${membersHtml}</div>
+                </div>
+              `;
+      }
+
+      // ---- BUILD: Faculty Card ----
+      function buildFacultyCard(f, idx) {
+        const anggota = f.anggota || [];
+        anggota.sort((a, b) => a.nama.localeCompare(b.nama));
+
+        let membersHtml = "";
+        for (const m of anggota) {
+          const kel = m.namaKelompok || "—";
+          membersHtml += `
+                    <div class="member-item">
+                      <span class="m-name">${m.nama}</span>
+                      <span class="m-detail">${kel} <span class="m-fac">· Kel ${m.noKel || "—"}</span></span>
+                    </div>
+                  `;
+        }
+
+        return `
+                <div class="result-card" style="animation-delay:${(idx - 1) * 0.04}s">
+                  <div class="card-badge"><i class="fa-regular fa-building"></i> Fakultas</div>
+                  <div class="row"><span class="label">Fakultas</span><span class="value"><strong>${f.fakultas}</strong></span></div>
+                  <div class="row"><span class="label">Jumlah Mahasiswa</span><span class="value">${anggota.length} orang</span></div>
+                  <div class="member-list">${membersHtml}</div>
+                </div>
+              `;
+      }
+
+      // ---- EVENT: Search ----
+      function handleSearch() {
+        const val = searchInput.value.trim();
+        if (!val) {
+          // kosongkan hasil
+          resultContainer.innerHTML = `
+                    <div class="no-results">
+                      <div class="big-icon"><i class="fa-regular fa-keyboard"></i></div>
+                      <div>Ketik nama, kelompok, atau fakultas</div>
+                      <div class="hint">misal: &quot;Kristal&quot; atau &quot;FIS&quot;</div>
+                    </div>
+                  `;
+          resultStats.textContent = "";
+          return;
+        }
+        performSearch(val);
+      }
+
+      searchBtn.addEventListener("click", handleSearch);
+      searchInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          handleSearch();
+        }
+      });
+
+      // ---- FOKUS OTOMATIS ----
+      setTimeout(() => {
+        searchInput.focus();
+      }, 600);
+
+      // ---- TAMPILKAN PESAN AWAL ----
+      resultContainer.innerHTML = `
+              <div class="no-results">
+                <div class="big-icon"><i class="fa-regular fa-keyboard"></i></div>
+                <div>Ketik nama, kelompok, atau fakultas</div>
+                <div class="hint">misal: &quot;Kristal&quot; atau &quot;FIS&quot;</div>
+              </div>
+            `;
+
+      // ---- EXPOSE ke global (untuk debugging) ----
+      window.__data = kelompokMaba;
+      console.log(
+        `✅ Data kelompok Maba loaded: ${kelompokMaba.length} entries`,
+      );
+    </script>
+  </body>
+</html>

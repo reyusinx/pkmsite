@@ -217,7 +217,7 @@ body::before {
   padding-top: 0.6rem;
 }
 
-/* ---- RESPONSIVE ---- */
+/* ---- RESPONSIVE LOADING ---- */
 @media (max-width: 480px) {
   .loading-frame {
     padding: 1.5rem 1.5rem 2rem;
@@ -404,7 +404,7 @@ body::before {
   box-shadow: none !important;
   border-radius: 0 !important;
   padding: 1.5rem 1.25rem 2.5rem !important;
-  max-width: 500px !important; /* lebih sempit dari sebelumnya (max-w-sm = 384px, ini 400px) */
+  max-width: 500px !important;
   margin: 0 auto !important;
 }
 
@@ -438,7 +438,7 @@ footer .heart {
   display: flex;
   justify-content: center;
   gap: -2rem;
-  margin-top: 0.8rem; /* naikkan posisi */
+  margin-top: 0.8rem;
   margin-bottom: 0.5rem;
 }
 
@@ -568,7 +568,7 @@ footer .heart {
 
 @media (min-width: 641px) {
   .hero-img-wrap img {
-    max-width: 480px; /* lebih besar di desktop */
+    max-width: 480px;
   }
   .social-logos {
     gap: 1.5rem;
@@ -721,6 +721,7 @@ footer .heart {
   position: relative;
   margin-bottom: 0.2rem;
   line-height: 1.6;
+  list-style: none;
 }
 
 .kontribusi-card .list-item::before {
@@ -804,6 +805,280 @@ footer .heart {
   }
 }
 
+/* ============================================
+   STYLE KHUSUS HALAMAN KELOMPOK MABA
+   ============================================ */
+
+/* Hero search */
+.hero-search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem 2rem;
+  position: relative;
+}
+
+.hero-search .hero-title {
+  font-family: "Wallpoet", "Inter", sans-serif;
+  font-size: 1.2rem;
+  color: #ffde59;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.hero-search .hero-sub {
+  font-size: 0.75rem;
+  color: rgba(255, 222, 89, 0.25);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+/* Search bar */
+.search-wrap {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid rgba(255, 222, 89, 0.2);
+  border-radius: 40px;
+  padding: 0.2rem 0.2rem 0.2rem 1.25rem;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.search-wrap:focus-within {
+  border-color: #ffde59;
+  box-shadow: 0 0 30px rgba(255, 222, 89, 0.06);
+}
+
+.search-wrap .search-icon {
+  color: rgba(255, 222, 89, 0.3);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.search-wrap input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #f5e6d3;
+  font-size: 0.85rem;
+  padding: 0.7rem 0;
+  min-width: 0;
+}
+
+.search-wrap input::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+  font-weight: 300;
+}
+
+.search-wrap .search-btn {
+  background: linear-gradient(to bottom, #a0522d, #d97706, #ffa944, #ffb35a);
+  border: none;
+  border-radius: 40px;
+  padding: 0.6rem 1.2rem;
+  color: #462c15;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  font-family: "Wallpoet", "Inter", sans-serif;
+  flex-shrink: 0;
+  border: 1px solid #ffde59;
+}
+
+.search-wrap .search-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 20px rgba(160, 82, 45, 0.35);
+}
+
+.search-wrap .search-btn:active {
+  transform: scale(0.94);
+}
+
+/* Back home */
+.back-home {
+  display: inline-block;
+  font-size: 0.65rem;
+  color: rgba(255, 222, 89, 0.2);
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+  margin-top: 0.5rem;
+}
+
+.back-home:hover {
+  color: rgba(255, 222, 89, 0.5);
+}
+
+.back-home i {
+  margin-right: 4px;
+}
+
+/* Results container */
+#results {
+  padding: 0 1.25rem 3rem;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+#results .result-stats {
+  text-align: center;
+  font-size: 0.7rem;
+  color: rgba(255, 222, 89, 0.25);
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  font-family: "Courier New", monospace;
+}
+
+/* Result card */
+.result-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 222, 89, 0.12);
+  border-radius: 18px;
+  padding: 1.2rem 1.25rem;
+  color: #f5e6d3;
+  margin-bottom: 0.75rem;
+  transition: all 0.3s ease;
+  animation: fadeUp 0.4s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.result-card:hover {
+  border-color: rgba(255, 222, 89, 0.3);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.result-card .card-badge {
+  display: inline-block;
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #ffde59;
+  background: rgba(255, 222, 89, 0.08);
+  padding: 0.1rem 0.8rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 222, 89, 0.1);
+  margin-bottom: 0.6rem;
+}
+
+.result-card .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.2rem 0;
+  font-size: 0.82rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.result-card .row:last-child {
+  border-bottom: none;
+}
+
+.result-card .row .label {
+  color: rgba(255, 222, 89, 0.5);
+  font-weight: 500;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+  margin-right: 1rem;
+}
+
+.result-card .row .value {
+  text-align: right;
+  font-weight: 600;
+  color: #f0e0d0;
+  word-break: break-word;
+}
+
+.result-card .row .value strong {
+  color: #ffb35a;
+}
+
+/* Member list (for group / faculty) */
+.member-list {
+  margin-top: 0.4rem;
+}
+
+.member-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.25rem 0;
+  font-size: 0.78rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  gap: 0.5rem;
+}
+
+.member-item:last-child {
+  border-bottom: none;
+}
+
+.member-item .m-name {
+  font-weight: 600;
+  color: #f0e0d0;
+}
+
+.member-item .m-detail {
+  color: rgba(255, 222, 89, 0.4);
+  font-size: 0.65rem;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.member-item .m-detail .m-fac {
+  color: rgba(255, 222, 89, 0.3);
+}
+
+/* No results */
+.no-results {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: rgba(255, 255, 255, 0.15);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.no-results .big-icon {
+  font-size: 2.4rem;
+  color: rgba(255, 222, 89, 0.06);
+  margin-bottom: 0.5rem;
+}
+
+.no-results .hint {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.08);
+  margin-top: 0.3rem;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* SMOOTH SCROLL */
 html {
   scroll-behavior: smooth;
@@ -818,4 +1093,321 @@ html {
     animation: none !important;
     transition: none !important;
   }
+}
+
+/* ============================================
+   RESPONSIVE GABUNGAN (untuk semua halaman)
+   ============================================ */
+
+@media (max-width: 480px) {
+  /* Kelompok: search bar */
+  .search-wrap {
+    padding: 0.15rem 0.15rem 0.15rem 1rem;
+    border-radius: 30px;
+  }
+  .search-wrap input {
+    font-size: 0.75rem;
+    padding: 0.6rem 0;
+  }
+  .search-wrap .search-btn {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.65rem;
+  }
+  .search-wrap .search-icon {
+    font-size: 0.75rem;
+  }
+  .hero-search .hero-title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Kelompok: cards */
+  .result-card {
+    padding: 0.9rem 1rem;
+  }
+  .result-card .row {
+    font-size: 0.72rem;
+    flex-wrap: wrap;
+    gap: 0.1rem;
+  }
+  .result-card .row .label {
+    font-size: 0.6rem;
+  }
+  .result-card .row .value {
+    font-size: 0.72rem;
+  }
+  .member-item {
+    font-size: 0.7rem;
+    flex-wrap: wrap;
+  }
+  .member-item .m-detail {
+    font-size: 0.6rem;
+  }
+  #results {
+    padding: 0 0.8rem 2rem;
+  }
+}
+
+@media (min-width: 641px) {
+  .result-card {
+    padding: 1.4rem 1.6rem;
+  }
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 222, 89, 0.15);
+  border-radius: 10px;
+}
+
+/* ============================================
+   TOMBOL NON-AKTIF (BELUM TERSEDIA)
+   ============================================ */
+.link-btn.nonactive {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+  background: linear-gradient(to bottom, #3a2a1a, #5a3a2a, #6a4a3a, #7a5a4a);
+  border-color: rgba(255, 222, 89, 0.15);
+  box-shadow: none;
+  filter: grayscale(0.6);
+  transition: none;
+}
+
+.link-btn.nonactive .btn-label {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.link-btn.nonactive::after {
+  content: "· segera";
+  font-family: "Inter", sans-serif;
+  font-size: 0.55rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: rgba(255, 222, 89, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.1rem 0.6rem;
+  border-radius: 12px;
+  margin-left: 0.5rem;
+  white-space: nowrap;
+}
+
+/* Jika tombol nonactive masih ingin menampilkan efek hover (opsional) */
+.link-btn.nonactive:hover {
+  transform: none;
+  border-color: rgba(255, 222, 89, 0.15);
+  box-shadow: none;
+}
+
+/* ============================================
+   STYLE KHUSUS CP FAKULTAS
+   ============================================ */
+
+/* Hero CP */
+.hero-cp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem 2rem;
+  text-align: center;
+}
+
+.hero-cp-content {
+  max-width: 600px;
+}
+
+.hero-cp-title {
+  font-family: "Wallpoet", "Inter", sans-serif;
+  font-size: 1.8rem;
+  color: #ffde59;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.hero-cp-sub {
+  font-size: 0.85rem;
+  color: rgba(255, 222, 89, 0.3);
+  letter-spacing: 2px;
+  margin-bottom: 0.75rem;
+}
+
+/* Grid CP */
+.cp-list-section {
+  padding: 1rem 1.25rem 3rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cp-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* Card CP */
+.cp-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 222, 89, 0.12);
+  border-radius: 18px;
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  animation: fadeUp 0.5s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.cp-card:hover {
+  border-color: rgba(255, 222, 89, 0.3);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.cp-card-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 222, 89, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffde59;
+  font-size: 1.2rem;
+  border: 1px solid rgba(255, 222, 89, 0.1);
+}
+
+.cp-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.cp-card-fakultas {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #f5e6d3;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.1rem;
+}
+
+.cp-card-cp {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.1rem;
+}
+
+.cp-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 222, 89, 0.3);
+  background: rgba(255, 222, 89, 0.06);
+  padding: 0.05rem 0.5rem;
+  border-radius: 10px;
+}
+
+.cp-nama {
+  font-weight: 600;
+  color: #ffde59;
+  font-size: 0.9rem;
+}
+
+.cp-card-nomor {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: "Courier New", monospace;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.4rem;
+}
+
+/* Tombol WhatsApp */
+.cp-wa-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(to bottom, #a0522d, #d97706, #ffa944, #ffb35a);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.7rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.cp-wa-btn:hover {
+  background: #1ebe5c;
+  transform: scale(1.03);
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.25);
+}
+
+.cp-wa-btn:active {
+  transform: scale(0.95);
+}
+
+.cp-wa-btn i {
+  font-size: 0.85rem;
+}
+
+/* Responsive CP */
+@media (max-width: 640px) {
+  .cp-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.2rem 1rem;
+  }
+  .cp-card-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1rem;
+  }
+  .cp-card-cp {
+    justify-content: center;
+  }
+  .cp-wa-btn {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.8rem;
+  }
+  .hero-cp-title {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 641px) {
+  .cp-card {
+    padding: 1.2rem 1.8rem;
+  }
+}
+
+.cp-card-number {
+  font-family: "Wallpoet", "Inter", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffde59;
+  background: rgba(255, 222, 89, 0.12);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid rgba(255, 222, 89, 0.2);
+  flex-shrink: 0;
 }
