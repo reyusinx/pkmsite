@@ -248,22 +248,26 @@
               <div class="list-item">2. Mencicil (pada setiap termin)</div>
               <div class="termin-list">
                 <span class="termin-item"
-                  >Termin ke-1: 8-14 September 2025</span
+                  >Termin ke-1: 31 Agustus-5 September 2026</span
                 >
                 <span class="termin-item"
-                  >Termin ke-2: 15-21 September 2025</span
+                  >Termin ke-2: 6-12 September 2026</span
                 >
                 <span class="termin-item"
-                  >Termin ke-3: 22-24 September 2025</span
+                  >Termin ke-3: 13-19 September 2026</span
                 >
               </div>
             </div>
           </div>
-          <a href="#" class="link-btn" data-delay="300">
+          <button
+            type="button"
+            class="link-btn"
+            data-delay="300"
+            id="btnDokumentasi"
+          >
             <span class="btn-label">DOKUMENTASI PKM</span>
-            <span class="chevron-right"
-              ><i class="fa-solid fa-chevron-right"></i
-            ></span>
+            <span class="chevron-right"><i class="fa-solid fa-chevron-right"></i></span>
+          </button>
             <a href="#" class="link-btn nonactive" data-delay="250">
               <span class="btn-label">THEME SONG</span>
               <span class="chevron-right"
@@ -291,6 +295,38 @@
           </a>
         </div>
       </section>
+
+      <!-- ===== MODAL DOKUMENTASI ===== -->
+<div id="docModal" class="doc-modal" aria-hidden="true">
+  <div class="doc-modal-overlay" data-close></div>
+
+  <div class="doc-modal-content">
+    <button
+      type="button"
+      class="doc-modal-close"
+      aria-label="Tutup"
+      data-close
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <div class="doc-modal-title">Dokumentasi PKM</div>
+    <div class="doc-modal-divider"></div>
+
+    <div class="doc-modal-buttons">
+      <a href="https://drive.google.com/drive/folders/1gNfaQUxj0PJS_7OyYyeaqi7Ktm1xZGGI" class="doc-choice-btn">
+        <span>RTP</span>
+      </a>
+      <a href="https://drive.google.com/drive/folders/1whtiMy4c2mPuKF61z7J6IsXwjTZcmA9z
+" class="doc-choice-btn">
+        <span>PENA</span>
+      </a>
+      <a href="#" class="doc-choice-btn nonactive">
+        <span>KAMP</span>
+      </a>
+    </div>
+  </div>
+</div>
 
       <!-- FOOTER -->
       <footer class="py-5 text-center text-xs">
@@ -403,6 +439,36 @@
           updateParallax();
         }
       })();
+      /* ===== MODAL DOKUMENTASI ===== */
+(function initDocModal() {
+  const modal = document.getElementById("docModal");
+  const openBtn = document.getElementById("btnDokumentasi");
+  if (!modal || !openBtn) return;
+
+  function openModal() {
+    modal.classList.add("active");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    modal.classList.remove("active");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  openBtn.addEventListener("click", openModal);
+
+  modal.querySelectorAll("[data-close]").forEach((el) => {
+    el.addEventListener("click", closeModal);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("active")) {
+      closeModal();
+    }
+  });
+})();
     </script>
   </body>
 </html>

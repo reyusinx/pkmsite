@@ -2252,7 +2252,7 @@ const kelompokMaba = [
     fakultas: "FIS",
     noKel: "26",
     namaKelompok: "Mentari",
-    kakakKelompok: "Marcella",
+    kakakKelompok: "Gabriel Calvin",
     kakakPI: "Marcella",
   },
   {
@@ -2260,7 +2260,7 @@ const kelompokMaba = [
     fakultas: "FEB",
     noKel: "26",
     namaKelompok: "Mentari",
-    kakakKelompok: "Marcella",
+    kakakKelompok: "Gabriel Calvin",
     kakakPI: "Marcella",
   },
   {
@@ -2268,7 +2268,7 @@ const kelompokMaba = [
     fakultas: "FEB",
     noKel: "26",
     namaKelompok: "Mentari",
-    kakakKelompok: "Marcella",
+    kakakKelompok: "Gabriel Calvin",
     kakakPI: "Marcella",
   },
   {
@@ -2276,7 +2276,7 @@ const kelompokMaba = [
     fakultas: "FMIPA",
     noKel: "26",
     namaKelompok: "Mentari",
-    kakakKelompok: "Marcella",
+    kakakKelompok: "Gabriel Calvin",
     kakakPI: "Marcella",
   },
   {
@@ -2284,7 +2284,7 @@ const kelompokMaba = [
     fakultas: "FV",
     noKel: "26",
     namaKelompok: "Mentari",
-    kakakKelompok: "Marcella",
+    kakakKelompok: "Gabriel Calvin",
     kakakPI: "Marcella",
   },
   {
@@ -2292,7 +2292,7 @@ const kelompokMaba = [
     fakultas: "FS",
     noKel: "26",
     namaKelompok: "Mentari",
-    kakakKelompok: "Marcella",
+    kakakKelompok: "Gabriel Calvin",
     kakakPI: "Marcella",
   },
   {
@@ -2300,7 +2300,7 @@ const kelompokMaba = [
     fakultas: "FT",
     noKel: "26",
     namaKelompok: "Mentari",
-    kakakKelompok: "Marcella",
+    kakakKelompok: "Gabriel Calvin",
     kakakPI: "Marcella",
   },
   {
@@ -2308,7 +2308,7 @@ const kelompokMaba = [
     fakultas: "FIK",
     noKel: "26",
     namaKelompok: "Mentari",
-    kakakKelompok: "Marcella",
+    kakakKelompok: "Gabriel Calvin",
     kakakPI: "Marcella",
   },
   {
@@ -2316,7 +2316,7 @@ const kelompokMaba = [
     fakultas: "FIP",
     noKel: "26",
     namaKelompok: "Mentari",
-    kakakKelompok: "Marcella",
+    kakakKelompok: "Gabriel Calvin",
     kakakPI: "Marcella",
   },
   {
@@ -2324,7 +2324,7 @@ const kelompokMaba = [
     fakultas: "FT",
     noKel: "26",
     namaKelompok: "Mentari",
-    kakakKelompok: "Marcella",
+    kakakKelompok: "Gabriel Calvin",
     kakakPI: "Marcella",
   },
   {
@@ -2332,7 +2332,7 @@ const kelompokMaba = [
     fakultas: "FIP",
     noKel: "26",
     namaKelompok: "Mentari",
-    kakakKelompok: "Marcella",
+    kakakKelompok: "Gabriel Calvin",
     kakakPI: "Marcella",
   },
   {
@@ -2340,7 +2340,7 @@ const kelompokMaba = [
     fakultas: "FIS",
     noKel: "27",
     namaKelompok: "Kenari",
-    kakakKelompok: "Rahayu Ester",
+    kakakKelompok: "Nadya",
     kakakPI: "Rahayu Ester",
   },
   {
@@ -2348,7 +2348,7 @@ const kelompokMaba = [
     fakultas: "FEB",
     noKel: "27",
     namaKelompok: "Kenari",
-    kakakKelompok: "Rahayu Ester",
+    kakakKelompok: "Nadya",
     kakakPI: "Rahayu Ester",
   },
   {
@@ -2356,7 +2356,7 @@ const kelompokMaba = [
     fakultas: "FEB",
     noKel: "27",
     namaKelompok: "Kenari",
-    kakakKelompok: "Rahayu Ester",
+    kakakKelompok: "Nadya",
     kakakPI: "Rahayu Ester",
   },
   {
@@ -2364,7 +2364,7 @@ const kelompokMaba = [
     fakultas: "FMIPA",
     noKel: "27",
     namaKelompok: "Kenari",
-    kakakKelompok: "Rahayu Ester",
+    kakakKelompok: "Nadya",
     kakakPI: "Rahayu Ester",
   },
   {
@@ -2372,7 +2372,7 @@ const kelompokMaba = [
     fakultas: "FV",
     noKel: "27",
     namaKelompok: "Kenari",
-    kakakKelompok: "Rahayu Ester",
+    kakakKelompok: "Nadya",
     kakakPI: "Rahayu Ester",
   },
   {
@@ -2380,7 +2380,7 @@ const kelompokMaba = [
     fakultas: "FMIPA",
     noKel: "27",
     namaKelompok: "Kenari",
-    kakakKelompok: "Rahayu Ester",
+    kakakKelompok: "Nadya",
     kakakPI: "Rahayu Ester",
   },
   {
@@ -2388,7 +2388,7 @@ const kelompokMaba = [
     fakultas: "FT",
     noKel: "27",
     namaKelompok: "Kenari",
-    kakakKelompok: "Rahayu Ester",
+    kakakKelompok: "Nadya",
     kakakPI: "Rahayu Ester",
   },
   {
@@ -2396,7 +2396,7 @@ const kelompokMaba = [
     fakultas: "FS",
     noKel: "27",
     namaKelompok: "Kenari",
-    kakakKelompok: "Rahayu Ester",
+    kakakKelompok: "Nadya",
     kakakPI: "Rahayu Ester",
   },
   {
@@ -2404,7 +2404,7 @@ const kelompokMaba = [
     fakultas: "FIK",
     noKel: "27",
     namaKelompok: "Kenari",
-    kakakKelompok: "Rahayu Ester",
+    kakakKelompok: "Nadya",
     kakakPI: "Rahayu Ester",
   },
   {
@@ -2412,7 +2412,7 @@ const kelompokMaba = [
     fakultas: "FIP",
     noKel: "27",
     namaKelompok: "Kenari",
-    kakakKelompok: "Rahayu Ester",
+    kakakKelompok: "Nadya",
     kakakPI: "Rahayu Ester",
   },
   {
@@ -2420,7 +2420,7 @@ const kelompokMaba = [
     fakultas: "FT",
     noKel: "27",
     namaKelompok: "Kenari",
-    kakakKelompok: "Rahayu Ester",
+    kakakKelompok: "Nadya",
     kakakPI: "Rahayu Ester",
   },
   {
@@ -2428,7 +2428,7 @@ const kelompokMaba = [
     fakultas: "FIS",
     noKel: "28",
     namaKelompok: "Angin",
-    kakakKelompok: "Easter",
+    kakakKelompok: "Jevon",
     kakakPI: "Easter",
   },
   {
@@ -2436,7 +2436,7 @@ const kelompokMaba = [
     fakultas: "FEB",
     noKel: "28",
     namaKelompok: "Angin",
-    kakakKelompok: "Easter",
+    kakakKelompok: "Jevon",
     kakakPI: "Easter",
   },
   {
@@ -2444,7 +2444,7 @@ const kelompokMaba = [
     fakultas: "FMIPA",
     noKel: "28",
     namaKelompok: "Angin",
-    kakakKelompok: "Easter",
+    kakakKelompok: "Jevon",
     kakakPI: "Easter",
   },
   {
@@ -2452,7 +2452,7 @@ const kelompokMaba = [
     fakultas: "FK",
     noKel: "28",
     namaKelompok: "Angin",
-    kakakKelompok: "Easter",
+    kakakKelompok: "Jevon",
     kakakPI: "Easter",
   },
   {
@@ -2460,7 +2460,7 @@ const kelompokMaba = [
     fakultas: "FV",
     noKel: "28",
     namaKelompok: "Angin",
-    kakakKelompok: "Easter",
+    kakakKelompok: "Jevon",
     kakakPI: "Easter",
   },
   {
@@ -2468,7 +2468,7 @@ const kelompokMaba = [
     fakultas: "FMIPA",
     noKel: "28",
     namaKelompok: "Angin",
-    kakakKelompok: "Easter",
+    kakakKelompok: "Jevon",
     kakakPI: "Easter",
   },
   {
@@ -2476,7 +2476,7 @@ const kelompokMaba = [
     fakultas: "FIK",
     noKel: "28",
     namaKelompok: "Angin",
-    kakakKelompok: "Easter",
+    kakakKelompok: "Jevon",
     kakakPI: "Easter",
   },
   {
@@ -2484,7 +2484,7 @@ const kelompokMaba = [
     fakultas: "FT",
     noKel: "28",
     namaKelompok: "Angin",
-    kakakKelompok: "Easter",
+    kakakKelompok: "Jevon",
     kakakPI: "Easter",
   },
   {
@@ -2492,7 +2492,7 @@ const kelompokMaba = [
     fakultas: "FS",
     noKel: "28",
     namaKelompok: "Angin",
-    kakakKelompok: "Easter",
+    kakakKelompok: "Jevon",
     kakakPI: "Easter",
   },
   {
@@ -2500,7 +2500,7 @@ const kelompokMaba = [
     fakultas: "FIP",
     noKel: "28",
     namaKelompok: "Angin",
-    kakakKelompok: "Easter",
+    kakakKelompok: "Jevon",
     kakakPI: "Easter",
   },
   {
@@ -2508,7 +2508,7 @@ const kelompokMaba = [
     fakultas: "FT",
     noKel: "28",
     namaKelompok: "Angin",
-    kakakKelompok: "Easter",
+    kakakKelompok: "Jevon",
     kakakPI: "Easter",
   },
   {
@@ -3420,7 +3420,7 @@ const kelompokMaba = [
     fakultas: "FIS",
     noKel: "39",
     namaKelompok: "Labu",
-    kakakKelompok: "",
+    kakakKelompok: "Filadelfia A",
     kakakPI: "Filadelfia A",
   },
   {
@@ -3428,7 +3428,7 @@ const kelompokMaba = [
     fakultas: "FEB",
     noKel: "39",
     namaKelompok: "Labu",
-    kakakKelompok: "",
+    kakakKelompok: "Filadelfia A",
     kakakPI: "Filadelfia A",
   },
   {
@@ -3436,7 +3436,7 @@ const kelompokMaba = [
     fakultas: "FMIPA",
     noKel: "39",
     namaKelompok: "Labu",
-    kakakKelompok: "",
+    kakakKelompok: "Filadelfia A",
     kakakPI: "Filadelfia A",
   },
   {
@@ -3444,7 +3444,7 @@ const kelompokMaba = [
     fakultas: "FK",
     noKel: "39",
     namaKelompok: "Labu",
-    kakakKelompok: "",
+    kakakKelompok: "Filadelfia A",
     kakakPI: "Filadelfia A",
   },
   {
@@ -3452,7 +3452,7 @@ const kelompokMaba = [
     fakultas: "FMIPA",
     noKel: "39",
     namaKelompok: "Labu",
-    kakakKelompok: "",
+    kakakKelompok: "Filadelfia A",
     kakakPI: "Filadelfia A",
   },
   {
@@ -3460,7 +3460,7 @@ const kelompokMaba = [
     fakultas: "FV",
     noKel: "39",
     namaKelompok: "Labu",
-    kakakKelompok: "",
+    kakakKelompok: "Filadelfia A",
     kakakPI: "Filadelfia A",
   },
   {
@@ -3468,7 +3468,7 @@ const kelompokMaba = [
     fakultas: "FIK",
     noKel: "39",
     namaKelompok: "Labu",
-    kakakKelompok: "",
+    kakakKelompok: "Filadelfia A",
     kakakPI: "Filadelfia A",
   },
   {
@@ -3476,7 +3476,7 @@ const kelompokMaba = [
     fakultas: "FS",
     noKel: "39",
     namaKelompok: "Labu",
-    kakakKelompok: "",
+    kakakKelompok: "Filadelfia A",
     kakakPI: "Filadelfia A",
   },
   {
@@ -3484,7 +3484,7 @@ const kelompokMaba = [
     fakultas: "FT",
     noKel: "39",
     namaKelompok: "Labu",
-    kakakKelompok: "",
+    kakakKelompok: "Filadelfia A",
     kakakPI: "Filadelfia A",
   },
   {
@@ -3492,7 +3492,7 @@ const kelompokMaba = [
     fakultas: "FIP",
     noKel: "39",
     namaKelompok: "Labu",
-    kakakKelompok: "",
+    kakakKelompok: "Filadelfia A",
     kakakPI: "Filadelfia A",
   },
   {
@@ -3500,7 +3500,7 @@ const kelompokMaba = [
     fakultas: "FIP",
     noKel: "39",
     namaKelompok: "Labu",
-    kakakKelompok: "",
+    kakakKelompok: "Filadelfia A",
     kakakPI: "Filadelfia A",
   },
   {
@@ -3508,7 +3508,7 @@ const kelompokMaba = [
     fakultas: "FIS",
     noKel: "40",
     namaKelompok: "Apel",
-    kakakKelompok: "",
+    kakakKelompok: "Lamtama M",
     kakakPI: "Lamtama M",
   },
   {
@@ -3516,7 +3516,7 @@ const kelompokMaba = [
     fakultas: "FMIPA",
     noKel: "40",
     namaKelompok: "Apel",
-    kakakKelompok: "",
+    kakakKelompok: "Lamtama M",
     kakakPI: "Lamtama M",
   },
   {
@@ -3524,7 +3524,7 @@ const kelompokMaba = [
     fakultas: "",
     noKel: "40",
     namaKelompok: "Apel",
-    kakakKelompok: "",
+    kakakKelompok: "Lamtama M",
     kakakPI: "Lamtama M",
   },
   {
@@ -3532,7 +3532,7 @@ const kelompokMaba = [
     fakultas: "FEB",
     noKel: "40",
     namaKelompok: "Apel",
-    kakakKelompok: "",
+    kakakKelompok: "Lamtama M",
     kakakPI: "Lamtama M",
   },
   {
@@ -3540,7 +3540,7 @@ const kelompokMaba = [
     fakultas: "FEB",
     noKel: "40",
     namaKelompok: "Apel",
-    kakakKelompok: "",
+    kakakKelompok: "Lamtama M",
     kakakPI: "Lamtama M",
   },
   {
@@ -3548,7 +3548,7 @@ const kelompokMaba = [
     fakultas: "FK",
     noKel: "40",
     namaKelompok: "Apel",
-    kakakKelompok: "",
+    kakakKelompok: "Lamtama M",
     kakakPI: "Lamtama M",
   },
   {
@@ -3556,7 +3556,7 @@ const kelompokMaba = [
     fakultas: "FMIPA",
     noKel: "40",
     namaKelompok: "Apel",
-    kakakKelompok: "",
+    kakakKelompok: "Lamtama M",
     kakakPI: "Lamtama M",
   },
   {
@@ -3564,7 +3564,7 @@ const kelompokMaba = [
     fakultas: "FV",
     noKel: "40",
     namaKelompok: "Apel",
-    kakakKelompok: "",
+    kakakKelompok: "Lamtama M",
     kakakPI: "Lamtama M",
   },
   {
@@ -3572,7 +3572,7 @@ const kelompokMaba = [
     fakultas: "FIK",
     noKel: "40",
     namaKelompok: "Apel",
-    kakakKelompok: "",
+    kakakKelompok: "Lamtama M",
     kakakPI: "Lamtama M",
   },
   {
@@ -3580,7 +3580,7 @@ const kelompokMaba = [
     fakultas: "FS",
     noKel: "40",
     namaKelompok: "Apel",
-    kakakKelompok: "",
+    kakakKelompok: "Lamtama M",
     kakakPI: "Lamtama M",
   },
   {
@@ -3588,7 +3588,7 @@ const kelompokMaba = [
     fakultas: "FT",
     noKel: "40",
     namaKelompok: "Apel",
-    kakakKelompok: "",
+    kakakKelompok: "Lamtama M",
     kakakPI: "Lamtama M",
   },
   {
@@ -3596,7 +3596,7 @@ const kelompokMaba = [
     fakultas: "FIS",
     noKel: "41",
     namaKelompok: "Anggur",
-    kakakKelompok: "",
+    kakakKelompok: "Ira",
     kakakPI: "Apvia",
   },
   {
@@ -3604,7 +3604,7 @@ const kelompokMaba = [
     fakultas: "FIS",
     noKel: "41",
     namaKelompok: "Anggur",
-    kakakKelompok: "",
+    kakakKelompok: "Ira",
     kakakPI: "Apvia",
   },
   {
@@ -3612,7 +3612,7 @@ const kelompokMaba = [
     fakultas: "FPSI",
     noKel: "41",
     namaKelompok: "Anggur",
-    kakakKelompok: "",
+    kakakKelompok: "Ira",
     kakakPI: "Apvia",
   },
   {
@@ -3620,7 +3620,7 @@ const kelompokMaba = [
     fakultas: "FEB",
     noKel: "41",
     namaKelompok: "Anggur",
-    kakakKelompok: "",
+    kakakKelompok: "Ira",
     kakakPI: "Apvia",
   },
   {
@@ -3628,7 +3628,7 @@ const kelompokMaba = [
     fakultas: "FEB",
     noKel: "41",
     namaKelompok: "Anggur",
-    kakakKelompok: "",
+    kakakKelompok: "Ira",
     kakakPI: "Apvia",
   },
   {
@@ -3636,7 +3636,7 @@ const kelompokMaba = [
     fakultas: "FMIPA",
     noKel: "41",
     namaKelompok: "Anggur",
-    kakakKelompok: "",
+    kakakKelompok: "Ira",
     kakakPI: "Apvia",
   },
   {
@@ -3644,7 +3644,7 @@ const kelompokMaba = [
     fakultas: "FS",
     noKel: "41",
     namaKelompok: "Anggur",
-    kakakKelompok: "",
+    kakakKelompok: "Ira",
     kakakPI: "Apvia",
   },
   {
@@ -3652,7 +3652,7 @@ const kelompokMaba = [
     fakultas: "FMIPA",
     noKel: "41",
     namaKelompok: "Anggur",
-    kakakKelompok: "",
+    kakakKelompok: "Ira",
     kakakPI: "Apvia",
   },
   {
@@ -3660,7 +3660,7 @@ const kelompokMaba = [
     fakultas: "FV",
     noKel: "41",
     namaKelompok: "Anggur",
-    kakakKelompok: "",
+    kakakKelompok: "Ira",
     kakakPI: "Apvia",
   },
   {
@@ -3668,7 +3668,7 @@ const kelompokMaba = [
     fakultas: "FIK",
     noKel: "41",
     namaKelompok: "Anggur",
-    kakakKelompok: "",
+    kakakKelompok: "Ira",
     kakakPI: "Apvia",
   },
   {
@@ -3676,7 +3676,7 @@ const kelompokMaba = [
     fakultas: "FS",
     noKel: "41",
     namaKelompok: "Anggur",
-    kakakKelompok: "",
+    kakakKelompok: "Ira",
     kakakPI: "Apvia",
   },
   {
@@ -3684,7 +3684,7 @@ const kelompokMaba = [
     fakultas: "FIS",
     noKel: "42",
     namaKelompok: "Gandum",
-    kakakKelompok: "",
+    kakakKelompok: "Arni A",
     kakakPI: "Arni A",
   },
   {
@@ -3692,7 +3692,7 @@ const kelompokMaba = [
     fakultas: "FIS",
     noKel: "42",
     namaKelompok: "Gandum",
-    kakakKelompok: "",
+    kakakKelompok: "Arni A",
     kakakPI: "Arni A",
   },
   {
@@ -3700,7 +3700,7 @@ const kelompokMaba = [
     fakultas: "FPSI",
     noKel: "42",
     namaKelompok: "Gandum",
-    kakakKelompok: "",
+    kakakKelompok: "Arni A",
     kakakPI: "Arni A",
   },
   {
@@ -3708,7 +3708,7 @@ const kelompokMaba = [
     fakultas: "FEB",
     noKel: "42",
     namaKelompok: "Gandum",
-    kakakKelompok: "",
+    kakakKelompok: "Arni A",
     kakakPI: "Arni A",
   },
   {
@@ -3716,7 +3716,7 @@ const kelompokMaba = [
     fakultas: "FEB",
     noKel: "42",
     namaKelompok: "Gandum",
-    kakakKelompok: "",
+    kakakKelompok: "Arni A",
     kakakPI: "Arni A",
   },
   {
@@ -3724,7 +3724,7 @@ const kelompokMaba = [
     fakultas: "FMIPA",
     noKel: "42",
     namaKelompok: "Gandum",
-    kakakKelompok: "",
+    kakakKelompok: "Arni A",
     kakakPI: "Arni A",
   },
   {
@@ -3732,7 +3732,7 @@ const kelompokMaba = [
     fakultas: "FMIPA",
     noKel: "42",
     namaKelompok: "Gandum",
-    kakakKelompok: "",
+    kakakKelompok: "Arni A",
     kakakPI: "Arni A",
   },
   {
@@ -3740,7 +3740,7 @@ const kelompokMaba = [
     fakultas: "FS",
     noKel: "42",
     namaKelompok: "Gandum",
-    kakakKelompok: "",
+    kakakKelompok: "Arni A",
     kakakPI: "Arni A",
   },
   {
@@ -3748,7 +3748,7 @@ const kelompokMaba = [
     fakultas: "FV",
     noKel: "42",
     namaKelompok: "Gandum",
-    kakakKelompok: "",
+    kakakKelompok: "Arni A",
     kakakPI: "Arni A",
   },
   {
@@ -3756,7 +3756,7 @@ const kelompokMaba = [
     fakultas: "FIK",
     noKel: "42",
     namaKelompok: "Gandum",
-    kakakKelompok: "",
+    kakakKelompok: "Arni A",
     kakakPI: "Arni A",
   },
   {
@@ -3764,7 +3764,7 @@ const kelompokMaba = [
     fakultas: "FS",
     noKel: "42",
     namaKelompok: "Gandum",
-    kakakKelompok: "",
+    kakakKelompok: "Arni A",
     kakakPI: "Arni A",
   },
   {
@@ -3772,7 +3772,7 @@ const kelompokMaba = [
     fakultas: "FIS",
     noKel: "43",
     namaKelompok: "Delima",
-    kakakKelompok: "",
+    kakakKelompok: "Anabella A",
     kakakPI: "Anabella A",
   },
   {
@@ -3788,7 +3788,7 @@ const kelompokMaba = [
     fakultas: "FPSI",
     noKel: "43",
     namaKelompok: "Delima",
-    kakakKelompok: "",
+    kakakKelompok: "Anabella A",
     kakakPI: "Anabella A",
   },
   {
@@ -3796,7 +3796,7 @@ const kelompokMaba = [
     fakultas: "FEB",
     noKel: "43",
     namaKelompok: "Delima",
-    kakakKelompok: "",
+    kakakKelompok: "Anabella A",
     kakakPI: "Anabella A",
   },
   {
@@ -3804,7 +3804,7 @@ const kelompokMaba = [
     fakultas: "FEB",
     noKel: "43",
     namaKelompok: "Delima",
-    kakakKelompok: "",
+    kakakKelompok: "Anabella A",
     kakakPI: "Anabella A",
   },
   {
@@ -3812,7 +3812,7 @@ const kelompokMaba = [
     fakultas: "FMIPA",
     noKel: "43",
     namaKelompok: "Delima",
-    kakakKelompok: "",
+    kakakKelompok: "Anabella A",
     kakakPI: "Anabella A",
   },
   {
@@ -3820,7 +3820,7 @@ const kelompokMaba = [
     fakultas: "FMIPA",
     noKel: "43",
     namaKelompok: "Delima",
-    kakakKelompok: "",
+    kakakKelompok: "Anabella A",
     kakakPI: "Anabella A",
   },
   {
@@ -3828,7 +3828,7 @@ const kelompokMaba = [
     fakultas: "FS",
     noKel: "43",
     namaKelompok: "Delima",
-    kakakKelompok: "",
+    kakakKelompok: "Anabella A",
     kakakPI: "Anabella A",
   },
   {
@@ -3836,7 +3836,7 @@ const kelompokMaba = [
     fakultas: "FV",
     noKel: "43",
     namaKelompok: "Delima",
-    kakakKelompok: "",
+    kakakKelompok: "Anabella A",
     kakakPI: "Anabella A",
   },
   {
@@ -3844,7 +3844,7 @@ const kelompokMaba = [
     fakultas: "FIK",
     noKel: "43",
     namaKelompok: "Delima",
-    kakakKelompok: "",
+    kakakKelompok: "Anabella A",
     kakakPI: "Anabella A",
   },
   {
@@ -3852,7 +3852,7 @@ const kelompokMaba = [
     fakultas: "FS",
     noKel: "43",
     namaKelompok: "Delima",
-    kakakKelompok: "",
+    kakakKelompok: "Anabella A",
     kakakPI: "Anabella A",
   },
   {
@@ -3860,7 +3860,7 @@ const kelompokMaba = [
     fakultas: "FIS",
     noKel: "44",
     namaKelompok: "Rembulan",
-    kakakKelompok: "",
+    kakakKelompok: "Airell",
     kakakPI: "Maureen K",
   },
   {
@@ -3868,7 +3868,7 @@ const kelompokMaba = [
     fakultas: "FIS",
     noKel: "44",
     namaKelompok: "Rembulan",
-    kakakKelompok: "",
+    kakakKelompok: "Airell",
     kakakPI: "Maureen K",
   },
   {
@@ -3876,7 +3876,7 @@ const kelompokMaba = [
     fakultas: "FEB",
     noKel: "44",
     namaKelompok: "Rembulan",
-    kakakKelompok: "",
+    kakakKelompok: "Airell",
     kakakPI: "Maureen K",
   },
   {
@@ -3884,7 +3884,7 @@ const kelompokMaba = [
     fakultas: "FEB",
     noKel: "44",
     namaKelompok: "Rembulan",
-    kakakKelompok: "",
+    kakakKelompok: "Airell",
     kakakPI: "Maureen K",
   },
   {
@@ -3892,7 +3892,7 @@ const kelompokMaba = [
     fakultas: "FMIPA",
     noKel: "44",
     namaKelompok: "Rembulan",
-    kakakKelompok: "",
+    kakakKelompok: "Airell",
     kakakPI: "Maureen K",
   },
   {
@@ -3900,7 +3900,7 @@ const kelompokMaba = [
     fakultas: "FMIPA",
     noKel: "44",
     namaKelompok: "Rembulan",
-    kakakKelompok: "",
+    kakakKelompok: "Airell",
     kakakPI: "Maureen K",
   },
   {
@@ -3908,7 +3908,7 @@ const kelompokMaba = [
     fakultas: "FS",
     noKel: "44",
     namaKelompok: "Rembulan",
-    kakakKelompok: "",
+    kakakKelompok: "Airell",
     kakakPI: "Maureen K",
   },
   {
@@ -3916,7 +3916,7 @@ const kelompokMaba = [
     fakultas: "FV",
     noKel: "44",
     namaKelompok: "Rembulan",
-    kakakKelompok: "",
+    kakakKelompok: "Airell",
     kakakPI: "Maureen K",
   },
   {
@@ -3924,7 +3924,7 @@ const kelompokMaba = [
     fakultas: "FIK",
     noKel: "44",
     namaKelompok: "Rembulan",
-    kakakKelompok: "",
+    kakakKelompok: "Airell",
     kakakPI: "Maureen K",
   },
   {
@@ -3932,7 +3932,7 @@ const kelompokMaba = [
     fakultas: "FS",
     noKel: "44",
     namaKelompok: "Rembulan",
-    kakakKelompok: "",
+    kakakKelompok: "Airell",
     kakakPI: "Maureen K",
   },
   {
@@ -3940,7 +3940,7 @@ const kelompokMaba = [
     fakultas: "FT",
     noKel: "44",
     namaKelompok: "Rembulan",
-    kakakKelompok: "",
+    kakakKelompok: "Airell",
     kakakPI: "Maureen K",
   },
   {
@@ -3948,7 +3948,7 @@ const kelompokMaba = [
     fakultas: "FIS",
     noKel: "45",
     namaKelompok: "Kapibara",
-    kakakKelompok: "",
+    kakakKelompok: "Theo",
     kakakPI: "Ellasya M",
   },
   {
@@ -3956,7 +3956,7 @@ const kelompokMaba = [
     fakultas: "FIS",
     noKel: "45",
     namaKelompok: "Kapibara",
-    kakakKelompok: "",
+    kakakKelompok: "Theo",
     kakakPI: "Ellasya M",
   },
   {
@@ -3964,7 +3964,7 @@ const kelompokMaba = [
     fakultas: "FEB",
     noKel: "45",
     namaKelompok: "Kapibara",
-    kakakKelompok: "",
+    kakakKelompok: "Theo",
     kakakPI: "Ellasya M",
   },
   {
@@ -3972,7 +3972,7 @@ const kelompokMaba = [
     fakultas: "FEB",
     noKel: "45",
     namaKelompok: "Kapibara",
-    kakakKelompok: "",
+    kakakKelompok: "Theo",
     kakakPI: "Ellasya M",
   },
   {
@@ -3980,7 +3980,7 @@ const kelompokMaba = [
     fakultas: "FMIPA",
     noKel: "45",
     namaKelompok: "Kapibara",
-    kakakKelompok: "",
+    kakakKelompok: "Theo",
     kakakPI: "Ellasya M",
   },
   {
@@ -3988,7 +3988,7 @@ const kelompokMaba = [
     fakultas: "FV",
     noKel: "45",
     namaKelompok: "Kapibara",
-    kakakKelompok: "",
+    kakakKelompok: "Theo",
     kakakPI: "Ellasya M",
   },
   {
@@ -3996,7 +3996,7 @@ const kelompokMaba = [
     fakultas: "FS",
     noKel: "45",
     namaKelompok: "Kapibara",
-    kakakKelompok: "",
+    kakakKelompok: "Theo",
     kakakPI: "Ellasya M",
   },
   {
@@ -4004,7 +4004,7 @@ const kelompokMaba = [
     fakultas: "FIK",
     noKel: "45",
     namaKelompok: "Kapibara",
-    kakakKelompok: "",
+    kakakKelompok: "Theo",
     kakakPI: "Ellasya M",
   },
   {
@@ -4012,7 +4012,7 @@ const kelompokMaba = [
     fakultas: "FT",
     noKel: "45",
     namaKelompok: "Kapibara",
-    kakakKelompok: "",
+    kakakKelompok: "Theo",
     kakakPI: "Ellasya M",
   },
   {
@@ -4020,7 +4020,7 @@ const kelompokMaba = [
     fakultas: "FT",
     noKel: "45",
     namaKelompok: "Kapibara",
-    kakakKelompok: "",
+    kakakKelompok: "Theo",
     kakakPI: "Ellasya M",
   },
   {
@@ -4028,7 +4028,7 @@ const kelompokMaba = [
     fakultas: "FIP",
     noKel: "45",
     namaKelompok: "Kapibara",
-    kakakKelompok: "",
+    kakakKelompok: "Theo",
     kakakPI: "Ellasya M",
   },
 ];

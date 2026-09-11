@@ -1411,3 +1411,200 @@ html {
   border: 1.5px solid rgba(255, 222, 89, 0.2);
   flex-shrink: 0;
 }
+
+/* ============================================
+   MODAL DOKUMENTASI
+   ============================================ */
+
+.doc-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease;
+  padding: 1.5rem;
+}
+
+.doc-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Overlay dengan blur */
+.doc-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 6, 3, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+/* Konten modal */
+.doc-modal-content {
+  position: relative;
+  z-index: 1;
+  background: rgba(30, 20, 14, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 222, 89, 0.25);
+  border-radius: 22px;
+  padding: 2rem 1.75rem 1.75rem;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  transform: translateY(20px) scale(0.95);
+  transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+/* Tombol pilihan nonactive di dalam modal */
+.doc-choice-btn.nonactive {
+  opacity: 0.45;
+  pointer-events: none;
+  cursor: not-allowed;
+  background: linear-gradient(to bottom, #3a2a1a, #5a3a2a, #6a4a3a, #7a5a4a);
+  border-color: rgba(255, 222, 89, 0.15);
+  box-shadow: none;
+  filter: grayscale(0.6);
+  transition: none;
+  position: relative;
+}
+
+.doc-choice-btn.nonactive i,
+.doc-choice-btn.nonactive span {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.doc-choice-btn.nonactive::after {
+  content: "· segera";
+  position: absolute;
+  right: 0.9rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.5rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: rgba(255, 222, 89, 0.3);
+  background: rgba(0, 0, 0, 0.25);
+  padding: 0.1rem 0.5rem;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+.doc-choice-btn.nonactive:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: rgba(255, 222, 89, 0.15);
+}
+
+.doc-modal.active .doc-modal-content {
+  transform: translateY(0) scale(1);
+}
+
+/* Tombol close */
+.doc-modal-close {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 222, 89, 0.08);
+  border: 1px solid rgba(255, 222, 89, 0.2);
+  color: #ffde59;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.doc-modal-close:hover {
+  background: rgba(255, 222, 89, 0.18);
+  transform: rotate(90deg);
+}
+
+.doc-modal-close:active {
+  transform: rotate(90deg) scale(0.9);
+}
+
+/* Judul */
+.doc-modal-title {
+  font-family: "Wallpoet", "Inter", sans-serif;
+  font-size: 1.1rem;
+  color: #ffde59;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.doc-modal-divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #ffde59, transparent);
+  margin: 0.25rem auto 1.5rem;
+}
+
+/* Daftar tombol pilihan */
+.doc-modal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.doc-choice-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  text-decoration: none;
+  font-family: "Wallpoet", "Inter", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #462c15;
+  background: linear-gradient(to bottom, #a0522d, #d97706, #ffa944, #ffb35a);
+  border: 2px solid #ffde59;
+  box-shadow: 0 6px 20px rgba(160, 82, 45, 0.3);
+  transition: all 0.25s ease;
+}
+
+.doc-choice-btn i {
+  font-size: 1rem;
+  color: #462c15;
+}
+
+.doc-choice-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(160, 82, 45, 0.45);
+  border-color: #fff3c4;
+}
+
+.doc-choice-btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .doc-modal-content {
+    padding: 1.75rem 1.25rem 1.5rem;
+    border-radius: 18px;
+  }
+  .doc-modal-title {
+    font-size: 0.95rem;
+    letter-spacing: 1.8px;
+  }
+  .doc-choice-btn {
+    padding: 0.8rem 0.9rem;
+    font-size: 0.75rem;
+  }
+}
