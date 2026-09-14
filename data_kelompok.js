@@ -1692,7 +1692,7 @@ const kelompokMaba = [
     fakultas: "FPSI",
     noKel: "20",
     namaKelompok: "Lili",
-    kakakKelompok: "",
+    kakakKelompok: "Indy",
     kakakPI: "Gabriella Makunimau",
   },
   {
@@ -1700,7 +1700,7 @@ const kelompokMaba = [
     fakultas: "FIS",
     noKel: "20",
     namaKelompok: "Lili",
-    kakakKelompok: "",
+    kakakKelompok: "Indy",
     kakakPI: "Gabriella Makunimau",
   },
   {
@@ -1708,7 +1708,7 @@ const kelompokMaba = [
     fakultas: "FEB",
     noKel: "20",
     namaKelompok: "Lili",
-    kakakKelompok: "",
+    kakakKelompok: "Indy",
     kakakPI: "Gabriella Makunimau",
   },
   {
@@ -1716,7 +1716,7 @@ const kelompokMaba = [
     fakultas: "FEB",
     noKel: "20",
     namaKelompok: "Lili",
-    kakakKelompok: "",
+    kakakKelompok: "Indy",
     kakakPI: "Gabriella Makunimau",
   },
   {
@@ -1724,7 +1724,7 @@ const kelompokMaba = [
     fakultas: "FMIPA",
     noKel: "20",
     namaKelompok: "Lili",
-    kakakKelompok: "",
+    kakakKelompok: "Indy",
     kakakPI: "Gabriella Makunimau",
   },
   {
@@ -1732,7 +1732,7 @@ const kelompokMaba = [
     fakultas: "FK",
     noKel: "20",
     namaKelompok: "Lili",
-    kakakKelompok: "",
+    kakakKelompok: "Indy",
     kakakPI: "Gabriella Makunimau",
   },
   {
@@ -1740,7 +1740,7 @@ const kelompokMaba = [
     fakultas: "FV",
     noKel: "20",
     namaKelompok: "Lili",
-    kakakKelompok: "",
+    kakakKelompok: "Indy",
     kakakPI: "Gabriella Makunimau",
   },
   {
@@ -1748,7 +1748,7 @@ const kelompokMaba = [
     fakultas: "FIK",
     noKel: "20",
     namaKelompok: "Lili",
-    kakakKelompok: "",
+    kakakKelompok: "Indy",
     kakakPI: "Gabriella Makunimau",
   },
   {
@@ -1756,7 +1756,7 @@ const kelompokMaba = [
     fakultas: "FS",
     noKel: "20",
     namaKelompok: "Lili",
-    kakakKelompok: "",
+    kakakKelompok: "Indy",
     kakakPI: "Gabriella Makunimau",
   },
   {
@@ -1764,7 +1764,7 @@ const kelompokMaba = [
     fakultas: "FIP",
     noKel: "20",
     namaKelompok: "Lili",
-    kakakKelompok: "",
+    kakakKelompok: "Indy",
     kakakPI: "Gabriella Makunimau",
   },
   {
@@ -1772,7 +1772,7 @@ const kelompokMaba = [
     fakultas: "FT",
     noKel: "20",
     namaKelompok: "Lili",
-    kakakKelompok: "",
+    kakakKelompok: "Indy",
     kakakPI: "Gabriella Makunimau",
   },
   {
