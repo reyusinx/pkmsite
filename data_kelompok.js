@@ -2336,6 +2336,14 @@ const kelompokMaba = [
     kakakPI: "Marcella",
   },
   {
+    nama: "FLAMINO FERNANDES",
+    fakultas: "FT",
+    noKel: "26",
+    namaKelompok: "Mentari",
+    kakakKelompok: "Gabriel Calvin",
+    kakakPI: "Marcella",
+  },
+  {
     nama: "ELBANIA TRIFENA JENIFER MALAMUK",
     fakultas: "FIS",
     noKel: "27",
