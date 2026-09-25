@@ -182,9 +182,9 @@ const kamarData = {
             { nama: "Fiorentina Meylisa Putri Gunawan", fakultas: "FS" },
             { nama: "Stevie Nathania Dotie", fakultas: "FS" },
             { nama: "Dioxvel Sharapova Priyantoyo", fakultas: "FIS" },
-            { nama: "Indah Aurelia Harianja", fakultas: "FMIPA" },
+            { nama: "Indah Aulia Harianja", fakultas: "FMIPA" },
             { nama: "Keyshia Natasia Putri Surbakti", fakultas: "FMIPA" },
-            { nama: "Sabelle Cherry Sunday", fakultas: "FEB" },
+            { nama: "Isabelle Cherry Sunday", fakultas: "FEB" },
           ],
         },
         {
@@ -454,6 +454,13 @@ const kamarData = {
               catatan: "blm bayar",
             },
             { nama: "Caterina White Tubi", fakultas: "FMIPA" },
+            { nama: "Putu Ratih Maharani Suwarso", fakultas: "FS" },
+            { nama: "Nur Eka Christyan", fakultas: "FS" },
+            { nama: "Valen Niel Kusmira Zega", fakultas: "FMIPA" },
+            {
+              nama: "Sheren Yueyinta Jocelyn Gwendolyn Athalee",
+              fakultas: "FEB",
+            },
           ],
         },
       ],
@@ -648,6 +655,7 @@ const kamarData = {
             { nama: "Reynaldi saputra sianturi", fakultas: "FV" },
             { nama: "Given march Ramschie", fakultas: "FT" },
             { nama: "Abraham Sigra Marcelino Tampubolon", fakultas: "FEB" },
+            { nama: "Christian Susanto", fakultas: "FIK" },
           ],
         },
         {
@@ -697,6 +705,8 @@ const kamarData = {
             { nama: "Christian Lufen Bahara Adi Legowo", fakultas: "FT" },
             { nama: "Hosea H Simatupang", fakultas: "FMIPA" },
             { nama: "Eldith Christo Saragih", fakultas: "FV" },
+            { nama: "Kristian Ronaldo", fakultas: "FIK" },
+            { nama: "Reyvando Dimas Pratya", fakultas: "FS" },
           ],
         },
         {
