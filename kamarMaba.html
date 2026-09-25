@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"
+    />
+    <title>Pembagian Kamar Maba PKM Imakris 2026</title>
+    <!-- Tailwind + Font Awesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&family=Wallpoet&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="image/Favicon PKM.png"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body>
+    <!-- ===== PARALLAX BG ===== -->
+    <div id="parallax-bg"></div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <div id="main-content">
+      <!-- HEADER -->
+      <header class="header">
+        <a href="/">
+          <img src="image/logo.png" alt="Logo" class="logo-img" />
+        </a>
+      </header>
+
+      <!-- HERO SEARCH -->
+      <section class="hero-search">
+        <div class="hero-title">Cari Kamar</div>
+        <div class="hero-sub">Maba · Nama · Kamar</div>
+
+        <div class="search-wrap" id="searchWrap">
+          <span class="search-icon"
+            ><i class="fa-solid fa-magnifying-glass"></i
+          ></span>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Ketik nama kamu…"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <button class="search-btn" id="searchBtn">Cari</button>
+        </div>
+
+        <a href="/" class="back-home">
+          <i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda
+        </a>
+      </section>
+
+      <!-- HASIL SEARCH NAMA -->
+      <section id="searchResultSection" class="kamar-search-result-section">
+        <div id="searchResultContainer"></div>
+      </section>
+
+      <!-- DENAH -->
+      <section id="denahSection" class="denah-section">
+        <div class="denah-hint" id="denahHint">
+          <i class="fa-solid fa-hand-pointer"></i>
+          Pencet titik gedung di denah buat lihat kamar-kamarnya
+        </div>
+
+        <div id="denahWrap"></div>
+
+        <!-- Daftar gedung (pelengkap / fallback kalau ada gedung yang
+             belum punya titik koordinat di denah) -->
+        <div class="gedung-chip-row" id="gedungChipRow"></div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="py-5 text-center text-xs">
+        <p>&copy; 2026 Imakris UM · All rights reserved.</p>
+        <p class="mt-1 text-[11px] text-white/25">
+          Made with <i class="fa-solid fa-heart heart"></i> &amp; Risol mayo
+        </p>
+      </footer>
+    </div>
+
+    <!-- ===== MODAL (2 tampilan: daftar kamar per-gedung, & isi 1 kamar) ===== -->
+    <div id="kamarModal" class="doc-modal" aria-hidden="true">
+      <div class="doc-modal-overlay" data-close></div>
+
+      <div class="doc-modal-content kamar-modal-content">
+        <button
+          type="button"
+          class="doc-modal-close"
+          aria-label="Tutup"
+          data-close
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <button type="button" class="kamar-modal-back" id="kamarModalBack">
+          <i class="fa-solid fa-arrow-left"></i> Daftar kamar
+        </button>
+
+        <div class="kamar-modal-badge" id="kamarModalBadge">Gedung</div>
+        <div class="doc-modal-title" id="kamarModalTitle">Gedung G</div>
+        <div class="kamar-modal-sub" id="kamarModalSub"></div>
+        <div class="doc-modal-divider"></div>
+
+        <!-- Pane 1: grid kamar dalam 1 gedung -->
+        <div id="paneRoomList" class="kamar-grid"></div>
+
+        <!-- Pane 2: daftar penghuni 1 kamar -->
+        <div
+          id="paneRoomDetail"
+          class="member-list kamar-modal-list"
+          style="display: none"
+        ></div>
+      </div>
+    </div>
+
+    <!-- ===== IMPORT MAP ===== -->
+    <script type="importmap">
+      {
+        "imports": {
+          "./data_kamar.js": "./data_kamar.js"
+        }
+      }
+    </script>
+
+    <!-- ===== MAIN SCRIPT ===== -->
+    <script type="module">
+      import kamarData from "./data_kamar.js";
+
+      // ---- DOM REFS ----
+      const searchInput = document.getElementById("searchInput");
+      const searchBtn = document.getElementById("searchBtn");
+      const searchResultContainer = document.getElementById(
+        "searchResultContainer",
+      );
+      const denahWrap = document.getElementById("denahWrap");
+      const gedungChipRow = document.getElementById("gedungChipRow");
+
+      const kamarModal = document.getElementById("kamarModal");
+      const kamarModalBack = document.getElementById("kamarModalBack");
+      const kamarModalBadge = document.getElementById("kamarModalBadge");
+      const kamarModalTitle = document.getElementById("kamarModalTitle");
+      const kamarModalSub = document.getElementById("kamarModalSub");
+      const paneRoomList = document.getElementById("paneRoomList");
+      const paneRoomDetail = document.getElementById("paneRoomDetail");
+
+      // ---- NORMALISASI ----
+      const normalize = (s) => (s ? s.trim().toLowerCase() : "");
+
+      // ---- CARI ORANG BERDASARKAN NAMA (lintas semua gedung) ----
+      function findRoomsByName(query) {
+        const q = normalize(query);
+        if (!q) return [];
+        const results = [];
+        for (const g of kamarData.gedung) {
+          for (const k of g.kamar) {
+            for (const m of k.anggota) {
+              if (normalize(m.nama).includes(q)) {
+                results.push({
+                  nama: m.nama,
+                  fakultas: m.fakultas,
+                  kodeKamar: k.kode,
+                  gedungId: g.id,
+                  gedung: g.gedung,
+                  kategori: g.kategori,
+                });
+              }
+            }
+          }
+        }
+        results.sort((a, b) => a.nama.localeCompare(b.nama));
+        return results;
+      }
+
+      // ---- RENDER HASIL SEARCH NAMA ----
+      function renderSearchResult(query) {
+        const q = query.trim();
+        if (!q) {
+          searchResultContainer.innerHTML = "";
+          return;
+        }
+        const results = findRoomsByName(q);
+
+        if (results.length === 0) {
+          searchResultContainer.innerHTML = `
+            <div class="no-results">
+              <div class="big-icon"><i class="fa-regular fa-face-frown"></i></div>
+              <div>Nama &quot;${q}&quot; tidak ditemukan</div>
+              <div class="hint">Coba cek ejaan nama, atau pencet gedungnya langsung di denah</div>
+            </div>
+          `;
+          return;
+        }
+
+        let html = `<div class="result-stats">${results.length} hasil untuk &quot;${q}&quot;</div>`;
+        results.forEach((r, i) => {
+          html += `
+            <div class="result-card kamar-found-card" style="animation-delay:${i * 0.05}s">
+              <div class="card-badge"><i class="fa-solid fa-bed"></i> Kamar Ditemukan</div>
+              <div class="row"><span class="label">Nama</span><span class="value"><strong>${r.nama}</strong></span></div>
+              <div class="row"><span class="label">Fakultas</span><span class="value">${r.fakultas || "—"}</span></div>
+              <div class="row"><span class="label">Gedung</span><span class="value">${r.gedung} · ${r.kategori}</span></div>
+              <div class="row"><span class="label">Nomor Kamar</span><span class="value"><strong>${r.kodeKamar}</strong></span></div>
+              <button
+                type="button"
+                class="kamar-lihat-btn"
+                data-gedung="${r.gedungId}"
+                data-kode="${r.kodeKamar}"
+              >
+                <i class="fa-solid fa-door-open"></i> Lihat Teman Sekamar
+              </button>
+            </div>
+          `;
+        });
+        searchResultContainer.innerHTML = html;
+
+        searchResultContainer
+          .querySelectorAll(".kamar-lihat-btn")
+          .forEach((btn) => {
+            btn.addEventListener("click", () => {
+              openRoomDetail(btn.dataset.gedung, btn.dataset.kode);
+            });
+          });
+      }
+
+      // ---- RENDER DENAH (gambar + titik gedung) ----
+      function renderDenah() {
+        let pins = "";
+        kamarData.gedung.forEach((g) => {
+          if (g.x == null || g.y == null) return;
+          const total = g.kamar.reduce((a, k) => a + k.anggota.length, 0);
+          pins += `
+            <button
+              type="button"
+              class="kamar-pin"
+              style="left:${g.x}%; top:${g.y}%;"
+              data-gedung="${g.id}"
+              aria-label="Gedung ${g.kode} — ${g.kategori}"
+              title="Gedung ${g.kode} · ${g.kategori} · ${total} orang"
+            >
+              <span class="kamar-pin-dot"></span>
+              <span class="kamar-pin-label">${g.kode}</span>
+            </button>
+          `;
+        });
+
+        denahWrap.innerHTML = `
+          <div class="denah-img-wrap">
+            <img src="${kamarData.denah}" alt="Denah lokasi kamp" class="denah-img" />
+            ${pins}
+          </div>
+        `;
+
+        denahWrap.querySelectorAll(".kamar-pin").forEach((el) => {
+          el.addEventListener("click", () => {
+            openRoomList(el.dataset.gedung);
+          });
+        });
+      }
+
+      // ---- RENDER DAFTAR CHIP GEDUNG (pelengkap di bawah denah) ----
+      function renderGedungChips() {
+        gedungChipRow.innerHTML = kamarData.gedung
+          .map((g) => {
+            const total = g.kamar.reduce((a, k) => a + k.anggota.length, 0);
+            return `
+              <button type="button" class="gedung-chip" data-gedung="${g.id}">
+                <span class="gedung-chip-kode">${g.kode}</span>
+                <span class="gedung-chip-info">
+                  <span class="gedung-chip-kategori">${g.kategori}</span>
+                  <span class="gedung-chip-count">${g.kamar.length} kamar · ${total} orang</span>
+                </span>
+              </button>
+            `;
+          })
+          .join("");
+
+        gedungChipRow.querySelectorAll(".gedung-chip").forEach((el) => {
+          el.addEventListener("click", () => {
+            openRoomList(el.dataset.gedung);
+          });
+        });
+      }
+
+      // ---- MODAL: PANE 1 — daftar kamar dalam 1 gedung ----
+      function openRoomList(gedungId) {
+        const g = kamarData.gedung.find((x) => x.id === gedungId);
+        if (!g) return;
+
+        kamarModalBack.style.display = "none";
+        kamarModalBadge.textContent = `${g.kategori}`;
+        kamarModalTitle.textContent = g.gedung;
+        const total = g.kamar.reduce((a, k) => a + k.anggota.length, 0);
+        kamarModalSub.textContent = `${g.kamar.length} kamar · ${total} orang`;
+
+        paneRoomList.innerHTML = g.kamar
+          .map(
+            (k, i) => `
+              <button
+                type="button"
+                class="kamar-box"
+                style="animation-delay:${i * 0.02}s"
+                data-gedung="${g.id}"
+                data-kode="${k.kode}"
+              >
+                <span class="kamar-box-code">${k.kode}</span>
+                <span class="kamar-box-count"><i class="fa-solid fa-user-group"></i> ${k.anggota.length}</span>
+              </button>
+            `,
+          )
+          .join("");
+
+        paneRoomList.querySelectorAll(".kamar-box").forEach((el) => {
+          el.addEventListener("click", () => {
+            openRoomDetail(el.dataset.gedung, el.dataset.kode);
+          });
+        });
+
+        paneRoomList.style.display = "grid";
+        paneRoomDetail.style.display = "none";
+
+        kamarModal.classList.add("active");
+        kamarModal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      // ---- MODAL: PANE 2 — penghuni 1 kamar ----
+      function openRoomDetail(gedungId, kode) {
+        const g = kamarData.gedung.find((x) => x.id === gedungId);
+        if (!g) return;
+        const k = g.kamar.find((x) => x.kode === kode);
+        if (!k) return;
+
+        kamarModalBack.style.display = "flex";
+        kamarModalBack.onclick = () => openRoomList(gedungId);
+
+        kamarModalBadge.textContent = `${g.gedung} · ${g.kategori}`;
+        kamarModalTitle.textContent = `Kamar ${k.kode}`;
+        kamarModalSub.textContent = `${k.anggota.length} orang`;
+
+        const sorted = [...k.anggota].sort((a, b) =>
+          a.nama.localeCompare(b.nama),
+        );
+        paneRoomDetail.innerHTML = sorted
+          .map(
+            (m) => `
+              <div class="member-item">
+                <span class="m-name">${m.nama}</span>
+                <span class="m-detail">${m.fakultas || "—"}</span>
+              </div>
+            `,
+          )
+          .join("");
+
+        paneRoomList.style.display = "none";
+        paneRoomDetail.style.display = "block";
+
+        kamarModal.classList.add("active");
+        kamarModal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeKamarModal() {
+        kamarModal.classList.remove("active");
+        kamarModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      kamarModal.querySelectorAll("[data-close]").forEach((el) => {
+        el.addEventListener("click", closeKamarModal);
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && kamarModal.classList.contains("active")) {
+          closeKamarModal();
+        }
+      });
+
+      // ---- EVENT: Search nama ----
+      function handleSearch() {
+        renderSearchResult(searchInput.value);
+      }
+      searchBtn.addEventListener("click", handleSearch);
+      searchInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          handleSearch();
+        }
+      });
+      searchInput.addEventListener("input", () => {
+        if (!searchInput.value.trim()) {
+          searchResultContainer.innerHTML = "";
+        }
+      });
+
+      // ---- INIT ----
+      renderDenah();
+      renderGedungChips();
+
+      setTimeout(() => {
+        searchInput.focus();
+      }, 400);
+
+      window.__kamarData = kamarData;
+      console.log(
+        `✅ Data kamar loaded: ${kamarData.gedung.length} gedung, ${kamarData.gedung.reduce((a, g) => a + g.kamar.length, 0)} kamar, ${kamarData.gedung.reduce((a, g) => a + g.kamar.reduce((b, k) => b + k.anggota.length, 0), 0)} orang`,
+      );
+    </script>
+  </body>
+</html>
