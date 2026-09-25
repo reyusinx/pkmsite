@@ -99,7 +99,6 @@ const kamarData = {
             { nama: "Madeline Kezia Putri Prasetyo", fakultas: "FS" },
             { nama: "EVANGELINE KEYZIANDIRA ARIZONA", fakultas: "FIP" },
             { nama: "Gamaliel Orlien Paskahlya Rieuwpassa", fakultas: "FS" },
-            { nama: "Fiorentina Meylisa Putri Gunawan", fakultas: "FS" },
             { nama: "Aulia Saphira Arianzah", fakultas: "FV" },
             { nama: "Karunia Bulan Krishanty", fakultas: "FIK" },
             { nama: "Ni Komang Viola Septania Adeline", fakultas: "FV" },
@@ -179,6 +178,13 @@ const kamarData = {
             { nama: "Artara Kasih Joselin", fakultas: "FS" },
             { nama: "FRISKILA TITANIA", fakultas: "FIK" },
             { nama: "Yvonne Antonetta Imanuella", fakultas: "FS" },
+            { nama: "Aurelya Eunike Mamahit", fakultas: "FMIPA" },
+            { nama: "Fiorentina Meylisa Putri Gunawan", fakultas: "FS" },
+            { nama: "Stevie Nathania Dotie", fakultas: "FS" },
+            { nama: "Dioxvel Sharapova Priyantoyo", fakultas: "FIS" },
+            { nama: "Indah Aurelia Harianja", fakultas: "FMIPA" },
+            { nama: "Keyshia Natasia Putri Surbakti", fakultas: "FMIPA" },
+            { nama: "Sabelle Cherry Sunday", fakultas: "FEB" },
           ],
         },
         {
@@ -426,6 +432,33 @@ const kamarData = {
       ],
     },
     {
+      id: "gedung-m2-putri",
+      kode: "M2",
+      gedung: "Gedung M2",
+      kategori: "Putri",
+      x: null,
+      y: null,
+      kamar: [
+        {
+          kode: "M2",
+          anggota: [
+            { nama: "Rebeca Sihite", fakultas: "FPSI" },
+            {
+              nama: "Veronica Falencia",
+              fakultas: "FT",
+              catatan: "blm konfir kalau sdh bayar",
+            },
+            {
+              nama: "Michele Kenzo Wijaya",
+              fakultas: "FS",
+              catatan: "blm bayar",
+            },
+            { nama: "Caterina White Tubi", fakultas: "FMIPA" },
+          ],
+        },
+      ],
+    },
+    {
       id: "gedung-o-putra",
       kode: "O",
       gedung: "Gedung O",
@@ -554,6 +587,7 @@ const kamarData = {
             { nama: "Darius Denanda Bagus Prasetya", fakultas: "FIS" },
             { nama: "Edward Imanuel", fakultas: "FT" },
             { nama: "Ray Renaldi Sitorus", fakultas: "FEB" },
+            { nama: "Mikhaelo Christoper Benecdiastha", fakultas: "FMIPA" },
           ],
         },
         {
@@ -564,6 +598,7 @@ const kamarData = {
             { nama: "Josepin Siahaan", fakultas: "FV" },
             { nama: "Emmanuel Calipsias Christoparela Emenk", fakultas: "FV" },
             { nama: "James Filippus Napitupulu", fakultas: "FT" },
+            { nama: "Edith Christo Saragih", fakultas: "FV" },
           ],
         },
         {
@@ -574,6 +609,11 @@ const kamarData = {
             { nama: "Avram Tetandho Gumilang Kasim", fakultas: "FV" },
             { nama: "Joan Pangarawahenu", fakultas: "FT" },
             { nama: "Jonathan Iskandar", fakultas: "FEB" },
+            {
+              nama: "Ricki Ronal Maas",
+              fakultas: "FEB",
+              catatan: "belum bayar, belum daftar",
+            },
           ],
         },
         {
@@ -597,6 +637,7 @@ const kamarData = {
             { nama: "Sam Peter Zhong", fakultas: "FV" },
             { nama: "Exsel Nathanael", fakultas: "FT" },
             { nama: "zeppelyn amadheo yuanta", fakultas: "FT" },
+            { nama: "Leo Candrika Lucy Prabasa", fakultas: "FIK" },
           ],
         },
         {
@@ -653,9 +694,8 @@ const kamarData = {
           kode: "O21",
           anggota: [
             { nama: "Jovande Samadi", fakultas: "FT" },
-            { nama: "Christian Lufen", fakultas: "FIP" },
+            { nama: "Christian Lufen Bahara Adi Legowo", fakultas: "FT" },
             { nama: "Hosea H Simatupang", fakultas: "FMIPA" },
-            { nama: "DIOXVEL SHARAPOVA PRIYANTOYO", fakultas: "FIS" },
             { nama: "Eldith Christo Saragih", fakultas: "FV" },
           ],
         },
@@ -667,6 +707,7 @@ const kamarData = {
             { nama: "Novrianus Jastin T. Lolu", fakultas: "FK" },
             { nama: "Jeremia Ndru Pangihutan Sianturi", fakultas: "FEB" },
             { nama: "Kevin Volcker Hutajulu", fakultas: "FIS" },
+            { nama: "Yoshua Oktavio", fakultas: "FT" },
           ],
         },
         {
@@ -676,6 +717,8 @@ const kamarData = {
             { nama: "Betuel Kevin Seo", fakultas: "FEB" },
             { nama: "Evan Galen Prissyandi", fakultas: "FT" },
             { nama: "Ubat Cristian Siagian", fakultas: "FEB" },
+            { nama: "Fires Arka Wisesa", fakultas: "FV" },
+            { nama: "Yoel Yesnath", fakultas: "FIK" },
           ],
         },
       ],
