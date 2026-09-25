@@ -181,7 +181,6 @@ const kamarData = {
             { nama: "Aurelya Eunike Mamahit", fakultas: "FMIPA" },
             { nama: "Fiorentina Meylisa Putri Gunawan", fakultas: "FS" },
             { nama: "Stevie Nathania Dotie", fakultas: "FS" },
-            { nama: "Dioxvel Sharapova Priyantoyo", fakultas: "FIS" },
             { nama: "Indah Aulia Harianja", fakultas: "FMIPA" },
             { nama: "Keyshia Natasia Putri Surbakti", fakultas: "FMIPA" },
             { nama: "Isabelle Cherry Sunday", fakultas: "FEB" },
@@ -461,6 +460,23 @@ const kamarData = {
               nama: "Sheren Yueyinta Jocelyn Gwendolyn Athalee",
               fakultas: "FEB",
             },
+            {
+              nama: "Gracell Hollya Kurniawan",
+              fakultas: "FS",
+            },
+            {
+              nama: "Dioxvel Sharapova Priyantoyo",
+              fakultas: "FIS",
+            },
+            {
+              nama: "Greaty Mercy Natania",
+              fakultas: "FV",
+            },
+            {
+              nama: "Lestari Kheint Febriyanti Simanjuntak",
+              fakultas: "FS",
+            },
+            { nama: "Dioxvel Sharapova Priyantoyo", fakultas: "FIS" },
           ],
         },
       ],
@@ -503,7 +519,10 @@ const kamarData = {
             { nama: "Gilby Christian Utomo", fakultas: "FMIPA" },
             { nama: "Hardev edyth trisnojati", fakultas: "FS" },
             { nama: "Farel Krisdianto Silaban", fakultas: "FIP" },
-            { nama: "Darius Aurel Bagus Satriya", fakultas: "FEB" },
+            {
+              nama: "Darius Aurel Bagus Satriya",
+              fakultas: "FEB",
+            },
           ],
         },
         {
@@ -591,7 +610,6 @@ const kamarData = {
           anggota: [
             { nama: "Benhard Alexander Sirait", fakultas: "FMIPA" },
             { nama: "Nathaniel Ruby", fakultas: "FIK" },
-            { nama: "Darius Denanda Bagus Prasetya", fakultas: "FIS" },
             { nama: "Edward Imanuel", fakultas: "FT" },
             { nama: "Ray Renaldi Sitorus", fakultas: "FEB" },
             { nama: "Mikhaelo Christoper Benecdiastha", fakultas: "FMIPA" },
@@ -634,6 +652,10 @@ const kamarData = {
             { nama: "Mike Douglas Simangunsong", fakultas: "FT" },
             { nama: "Vionell firstian Nixon febi elycio", fakultas: "FV" },
             { nama: "Shintong Vernanditho Pakpahan", fakultas: "FT" },
+            {
+              nama: "Haryo Sekti Pambudi",
+              fakultas: "FS",
+            },
           ],
         },
         {
@@ -656,16 +678,23 @@ const kamarData = {
             { nama: "Given march Ramschie", fakultas: "FT" },
             { nama: "Abraham Sigra Marcelino Tampubolon", fakultas: "FEB" },
             { nama: "Christian Susanto", fakultas: "FIK" },
+            {
+              nama: "Madrid Pelletimu",
+              fakultas: "FEB",
+            },
           ],
         },
         {
           kode: "O17",
           anggota: [
-            { nama: "Vebriel Maha Putra Ziliwu", fakultas: "FMIPA" },
             { nama: "Farel Cristian Patulak", fakultas: "FIK" },
             { nama: "Reyhan Siregar", fakultas: "FV" },
             { nama: "Tohap Manalu", fakultas: "FT" },
             { nama: "Glenn Marcello Krisna Anang Kusuma", fakultas: "FS" },
+            {
+              nama: "Anugrah Bastanta",
+              fakultas: "FIS",
+            },
           ],
         },
         {
